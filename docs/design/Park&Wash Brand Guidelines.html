@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=1280"/>
+<title>Park&Wash — Brand Guidelines</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A73E8'/><path d='M16 7 C 11 13, 8.5 17, 8.5 20.5 a 7.5 7.5 0 0 0 15 0 C 23.5 17, 21 13, 16 7Z' fill='%23fff'/></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/tokens.css"/>
+<style>
+  .bg-root { max-width: 1440px; margin: 0 auto; background: var(--pw-paper); box-shadow: 0 0 0 1px var(--pw-fog); }
+  /* subtle anchor nav */
+  .tocnav {
+    position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 20;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .tocnav a {
+    width: 10px; height: 10px; border-radius: 99px; background: var(--pw-mist);
+    display: block; transition: all .2s;
+  }
+  .tocnav a:hover, .tocnav a.active { background: var(--pw-blue-600); transform: scale(1.3); }
+</style>
+</head>
+<body>
+<nav class="tocnav" aria-label="Secties">
+  <a href="#cover" title="Cover"></a>
+  <a href="#logo" title="Logo"></a>
+  <a href="#color" title="Kleur"></a>
+  <a href="#type" title="Type"></a>
+  <a href="#icons" title="Iconen"></a>
+  <a href="#spacing" title="Schaal"></a>
+  <a href="#apps" title="Toepassingen"></a>
+  <a href="#assets" title="Assets"></a>
+</nav>
+
+<div class="bg-root" id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components/badge-logo.jsx"></script>
+<script type="text/babel" src="components/marks.jsx"></script>
+<script type="text/babel" src="components/icons.jsx"></script>
+<script type="text/babel" src="components/sections-1-intro.jsx"></script>
+<script type="text/babel" src="components/sections-2-logo.jsx"></script>
+<script type="text/babel" src="components/sections-3-color.jsx"></script>
+<script type="text/babel" src="components/sections-4-type.jsx"></script>
+<script type="text/babel" src="components/sections-5-icons-spacing.jsx"></script>
+<script type="text/babel" src="components/sections-6-apps.jsx"></script>
+<script type="text/babel" src="components/sections-7-assets.jsx"></script>
+
+<script type="text/babel">
+const App = () => (
+  <>
+    <div id="cover"><BG_Cover/></div>
+    <BG_Principles/>
+    <div id="logo"><BG_LogoSection/></div>
+    <div id="color"><BG_ColorSection/></div>
+    <div id="type"><BG_TypeSection/></div>
+    <div id="icons"><BG_IconSection/></div>
+    <div id="spacing"><BG_SpacingSection/></div>
+    <div id="apps"><BG_AppSection/></div>
+    <div id="assets"><BG_AssetsSection/></div>
+    <BG_Colophon/>
+  </>
+);
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+
+// TOC active state
+const links = document.querySelectorAll('.tocnav a');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+['cover','logo','color','type','icons','spacing','apps','assets'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) io.observe(el);
+});
+</script>
+</body>
+</html>

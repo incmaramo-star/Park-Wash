@@ -1,0 +1,63 @@
+/* Park&Wash — Design Tokens */
+:root {
+  /* Brand blues — derived from logo + brief */
+  --pw-blue-950: #0A1B2E;   /* deepest navy (logo outline) */
+  --pw-blue-900: #102A43;
+  --pw-blue-800: #14365C;   /* logo badge fill */
+  --pw-blue-700: #1859A8;
+  --pw-blue-600: #1A73E8;   /* SIGNATURE — brand blue */
+  --pw-blue-500: #3B8BED;
+  --pw-blue-400: #6AA9F2;
+  --pw-blue-300: #A3C9F7;
+  --pw-blue-200: #D1E3FB;
+  --pw-blue-100: #E8F1FD;
+  --pw-blue-50:  #F4F8FE;
+
+  /* Neutrals — warm-neutral whites, cool greys */
+  --pw-ink:     #0B1220;
+  --pw-graphite:#3A4555;
+  --pw-slate:   #6B7689;
+  --pw-mist:    #B7C0CC;
+  --pw-fog:     #E4E8EE;
+  --pw-cloud:   #F5F5F5;   /* brief */
+  --pw-paper:   #FAFBFC;
+  --pw-white:   #FFFFFF;
+
+  /* Support (accents — sparingly) */
+  --pw-signal:  #2EC27E;   /* "done / approved" */
+  --pw-alert:   #E8733B;   /* "attention" */
+
+  /* Radii */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 18px;
+  --r-xl: 28px;
+  --r-pill: 999px;
+
+  /* Shadows */
+  --sh-1: 0 1px 2px rgba(11,18,32,.06), 0 1px 1px rgba(11,18,32,.04);
+  --sh-2: 0 4px 12px rgba(11,18,32,.08), 0 2px 4px rgba(11,18,32,.04);
+  --sh-3: 0 12px 28px rgba(11,18,32,.12), 0 4px 8px rgba(11,18,32,.06);
+  --sh-blue: 0 12px 28px rgba(26,115,232,.28);
+
+  /* Spacing (4pt) */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px;
+
+  /* Type */
+  --f-display: "Poppins", system-ui, sans-serif;
+  --f-body:    "Montserrat", system-ui, sans-serif;
+  --f-mono:    ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--f-body);
+  color: var(--pw-ink);
+  background: var(--pw-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

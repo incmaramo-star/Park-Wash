@@ -2,7 +2,7 @@ begin;
 
 create extension if not exists pgtap with schema extensions;
 
-select plan(28);
+select plan(32);
 
 insert into public.services (
   type,
@@ -81,6 +81,48 @@ select is(
   'anon cannot read leads'
 );
 
+select lives_ok(
+  $$
+    insert into public.leads (
+      name,
+      email,
+      customer_type,
+      message,
+      source,
+      status,
+      privacy_consent_at
+    )
+    values (
+      'Anonymous Visitor',
+      'visitor@example.com',
+      'particular',
+      'Public contact form RLS verification lead.',
+      'contact_form',
+      'new',
+      now()
+    )
+  $$,
+  'anon can insert a consented contact form lead'
+);
+
+select is(
+  (select count(*) from public.leads),
+  0::bigint,
+  'anon still cannot read leads after public contact insert'
+);
+
+reset role;
+
+select is(
+  (select count(*) from public.leads where email = 'visitor@example.com'),
+  1::bigint,
+  'public contact lead insert is persisted for admin follow-up'
+);
+
+reset role;
+select set_config('request.jwt.claims', '{}', true);
+set local role anon;
+
 select throws_ok(
   $$
     insert into public.leads (
@@ -88,19 +130,49 @@ select throws_ok(
       email,
       customer_type,
       message,
+      source,
+      status,
       privacy_consent_at
     )
     values (
-      'Anonymous Visitor',
-      'visitor@example.com',
+      'Anonymous Quote',
+      'quote@example.com',
       'particular',
-      'Public lead insert is not open yet.',
+      'Public insert must stay limited to contact form leads.',
+      'quote_request',
+      'new',
       now()
     )
   $$,
   '42501',
   'new row violates row-level security policy for table "leads"',
-  'anon cannot insert leads until the explicit public insert policy is added'
+  'anon cannot insert leads with a non-contact source'
+);
+
+select throws_ok(
+  $$
+    insert into public.leads (
+      name,
+      email,
+      customer_type,
+      message,
+      source,
+      status,
+      privacy_consent_at
+    )
+    values (
+      'Anonymous Status',
+      'status@example.com',
+      'particular',
+      'Public insert must not set a workflow status.',
+      'contact_form',
+      'contacted',
+      now()
+    )
+  $$,
+  '42501',
+  'new row violates row-level security policy for table "leads"',
+  'anon cannot insert leads with an admin workflow status'
 );
 
 reset role;

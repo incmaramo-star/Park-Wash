@@ -302,6 +302,9 @@ leads
   coatings EUR 500-1200 en bedrijven/vloten op aanvraag.
 - Tijdsblokken worden opgeslagen als echte timestamps, niet als vrije tekst.
 - RLS staat standaard dicht en opent alleen wat expliciet nodig is.
+- Publieke contact-lead writes zijn beperkt tot anonieme inserts met
+  `source = 'contact_form'`, `status = 'new'` en expliciete
+  `privacy_consent_at`; publieke reads blijven dicht.
 
 ---
 
@@ -390,7 +393,7 @@ Na elke stap:
 - [ ] Relevante unit/integration tests slagen
 - [ ] Relevante Playwright E2E tests slagen voor gewijzigde kritieke flows
 - [ ] Pagina's en flows werken in NL, FR en EN
-- [ ] Contact flow werkt end-to-end en maakt correct een lead aan
+- [x] Contact flow werkt end-to-end en maakt correct een lead aan
 - [ ] Booking wizard doorloopt een echte slotreservering end-to-end
 - [ ] Overlap en dubbele reservaties worden server-side geblokkeerd
 - [ ] Alleen gepubliceerde diensten zijn live boekbaar

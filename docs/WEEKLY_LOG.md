@@ -31,6 +31,11 @@ Highlights:
   footer, contact, booking, and the privacy-policy page.
 - Completed issue #4 public preview pages: home, services, about, portfolio,
   and contact now form a contact-first public site in `nl`, `fr`, and `en`.
+- Completed issue #5 contact lead submission: the contact form now validates,
+  requires consent, writes Supabase leads through a server action, and shows
+  success only after the insert succeeds.
+- Narrowed public `leads` access to anon contact-form inserts and expanded
+  pgTAP RLS coverage so public reads and workflow-status writes stay closed.
 - Expanded public smoke/accessibility coverage for key preview routes, mobile
   navigation, footer contact routing, and published service display.
 - Configured repo-specific Matt Pocock skill metadata for GitHub Issues,
@@ -44,7 +49,9 @@ Highlights:
 Current focus:
 
 - Implement the Upstash-backed public form rate limiter.
-- Continue the first contact-flow slices toward protected contact lead storage.
+- Configure Vercel Bot Protection before public form launch.
+- Add the admin leads overview so submitted contact leads can be managed in the
+  dashboard.
 
 Risks / watch points:
 
@@ -54,6 +61,8 @@ Risks / watch points:
   blockers.
 - Portfolio galleries intentionally avoid fake media until approved project
   images are available.
+- Contact lead storage is now live in the app flow, but production launch still
+  needs the decided rate limiter and Vercel Bot Protection configuration.
 - Standalone mockups and the completed bootstrap plan are references, not
   current implementation truth.
 

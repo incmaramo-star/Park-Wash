@@ -205,7 +205,7 @@
   "ContactPage": {
     "eyebrow": "Contact",
     "title": "Le contact est maintenant le point de depart de chaque demande.",
-    "body": "Cette preview regroupe les demandes devis, fleet et planning pendant que le vrai formulaire lead est encore connecte cote serveur.",
+    "body": "Cette preview regroupe les demandes devis, fleet et planning et enregistre votre message seulement apres consentement et confirmation serveur.",
     "entries": {
       "quote": {
         "title": "Devis pour une voiture",
@@ -222,13 +222,13 @@
     },
     "intake": {
       "eyebrow": "Chemin de demande",
-      "title": "Un contact clair sans faux envoi.",
-      "body": "La page montre les informations utiles et garde le contexte confidentialite visible avant le stockage lead."
+      "title": "Un formulaire qui confirme seulement apres stockage.",
+      "body": "Ajoutez les details pratiques. Park&Wash voit votre demande comme nouveau lead et assure le suivi personnellement."
     },
     "methods": {
       "form": {
         "title": "Formulaire de contact",
-        "body": "Le formulaire recevra validation, rate limiting, bot protection et stockage Supabase dans une prochaine slice."
+        "body": "Le formulaire valide vos donnees, demande votre consentement et enregistre le lead dans Supabase."
       },
       "phone": {
         "title": "Suivi par telephone",
@@ -241,7 +241,57 @@
     },
     "privacy": {
       "title": "La confidentialite reste visible",
-      "body": "Le flux contact montre deja pourquoi les donnees sont utilisees et renvoie vers la politique de confidentialite."
+      "body": "Le flux contact montre pourquoi les donnees sont utilisees, demande un consentement explicite et renvoie vers la politique de confidentialite."
+    },
+    "form": {
+      "title": "Envoyer votre demande",
+      "body": "La confirmation apparait seulement lorsque le serveur a enregistre votre lead.",
+      "fields": {
+        "name": {
+          "label": "Nom",
+          "placeholder": "Votre nom"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "vous@example.com"
+        },
+        "phone": {
+          "label": "Telephone",
+          "placeholder": "Optionnel"
+        },
+        "customerType": {
+          "label": "Type de client",
+          "options": {
+            "particular": "Particulier",
+            "business": "Entreprise ou fleet"
+          }
+        },
+        "companyName": {
+          "label": "Entreprise",
+          "placeholder": "Optionnel"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Decrivez le vehicule, le lieu, le service souhaite et le timing."
+        }
+      },
+      "actions": {
+        "submit": "Envoyer le message",
+        "pending": "Envoi..."
+      },
+      "status": {
+        "success": "Merci, votre message est enregistre. Park&Wash suivra votre demande personnellement.",
+        "validation": "Verifiez les champs marques et reessayez.",
+        "setup": "Le formulaire est temporairement indisponible. Reessayez plus tard ou contactez-nous directement.",
+        "submit": "Votre message n'a pas pu etre envoye. Reessayez plus tard ou contactez-nous directement."
+      },
+      "validation": {
+        "required": "Remplissez ce champ.",
+        "tooShort": "Ajoutez un peu plus de detail.",
+        "tooLong": "Raccourcissez ce champ.",
+        "email": "Saisissez une adresse e-mail valide.",
+        "invalid": "Choisissez une option valide."
+      }
     }
   },
   "BookingPage": {

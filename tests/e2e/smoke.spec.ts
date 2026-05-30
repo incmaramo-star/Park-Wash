@@ -39,7 +39,9 @@ const publicPreviewCopy = {
       "Mobiele reiniging uit Melle, gebouwd op vertrouwen en precisie.",
     businessService: "Bedrijven en vloten",
     contactHeading: "Contact is nu het startpunt voor elke aanvraag.",
-    contactPanel: "Een helder contactpunt zonder fake submit.",
+    contactName: "Naam",
+    contactPanel: "Een contactformulier dat pas bevestigt na opslag.",
+    contactSubmit: "Bericht verzenden",
     footerContact: "Contact",
     portfolioHeading: "Before en after beelden krijgen hier een sterke plek.",
     serviceHeading: "Kies je dienst en vraag een offerte of contactmoment aan.",
@@ -52,7 +54,9 @@ const publicPreviewCopy = {
     businessService: "Entreprises et flottes",
     contactHeading:
       "Le contact est maintenant le point de depart de chaque demande.",
-    contactPanel: "Un contact clair sans faux envoi.",
+    contactName: "Nom",
+    contactPanel: "Un formulaire qui confirme seulement apres stockage.",
+    contactSubmit: "Envoyer le message",
     footerContact: "Contact",
     portfolioHeading: "Les avant/apres auront ici une place forte.",
     serviceHeading: "Choisissez un service et demandez un devis ou un contact.",
@@ -64,7 +68,9 @@ const publicPreviewCopy = {
     businessService: "Businesses and fleets",
     contactHeading:
       "Contact is the starting point for every request right now.",
-    contactPanel: "A clear contact point without fake submit.",
+    contactName: "Name",
+    contactPanel: "A contact form that confirms only after storage.",
+    contactSubmit: "Send message",
     footerContact: "Contact",
     portfolioHeading: "Before and after work will get a strong place here.",
     serviceHeading: "Choose a service and request a quote or callback.",
@@ -175,6 +181,12 @@ for (const locale of ["nl", "fr", "en"] as const) {
       page.getByRole("heading", { level: 1, name: copy.contactHeading }),
     ).toBeVisible();
     await expect(page.getByText(copy.contactPanel)).toBeVisible();
+    await expect(
+      page.getByRole("textbox", { name: copy.contactName }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: copy.contactSubmit }),
+    ).toBeVisible();
 
     await expect(
       page.locator("footer").getByRole("link", { name: copy.footerContact }),

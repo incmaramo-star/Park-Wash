@@ -14,6 +14,17 @@ Rules:
 
 ## 2026-05-30
 
+- Completed issue #5 contact lead submission: the localized contact form now
+  validates client-side where useful and server-side with Zod before inserting
+  Supabase `leads` rows.
+- Added a narrow anon insert RLS policy for contact-form leads, keeping public
+  reads closed and blocking non-contact sources or admin workflow statuses.
+- Added unit coverage for contact lead parsing plus pgTAP RLS coverage for
+  public lead insert access, and expanded smoke coverage for the contact form
+  entry point in `nl`, `fr`, and `en`.
+- Updated `docs/TODO.md`, `docs/WEEKLY_LOG.md`, `docs/PLAN.md`,
+  `docs/architecture/README.md`, and `docs/strategy/DECISIONS.md` for the
+  completed contact lead slice.
 - Completed issue #4 public preview pages: home, services, about, portfolio,
   and contact now have coherent contact-first structures in `nl`, `fr`, and
   `en`.

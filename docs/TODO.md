@@ -10,9 +10,6 @@ small and update it after each completed work package.
 ## Next
 
 - [ ] Configure Vercel Bot Protection managed ruleset before public form launch.
-- [ ] Implement contact form validation with Zod.
-- [ ] Implement contact lead server mutation.
-- [ ] Add public insert policy for `leads`.
 - [ ] Add admin leads overview.
 
 ## Services And Pricing
@@ -56,6 +53,15 @@ small and update it after each completed work package.
 
 ## Done
 
+- [x] Issue #5: contact form now validates in the client/browser where useful
+      and on the server with Zod before writing leads.
+- [x] Issue #5: contact lead submission writes Supabase `leads` rows only
+      after consent and validation pass, with server-confirmed success UI.
+- [x] Issue #5: public `leads` insert access is limited to anon
+      `contact_form` rows with `status = 'new'` and covered by pgTAP RLS
+      tests.
+- [x] Issue #5: contact form copy, fields, success, and failure states work in
+      `nl`, `fr`, and `en`.
 - [x] Issue #4: public preview pages now provide contact-first home,
       services, about, portfolio, and contact structures in `nl`, `fr`, and
       `en`.

@@ -95,3 +95,5 @@ small and update it after each completed work package.
 - [x] Refreshed PRD source-of-truth map, launch gaps, and doodlopende-sporen list.
 - [x] Chose contact-first preview as the first MVP launch level.
 - [x] Published contact-first preview vertical slices as GitHub issues #1-#9.
+- [x] Issue #2: public service query helpers read Supabase published services.
+- [x] Issue #2: homepage service preview uses Supabase service records instead of inline pricing data.

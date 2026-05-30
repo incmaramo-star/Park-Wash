@@ -6,7 +6,7 @@ describe("formatServicePrice", () => {
   it("formats from prices for Dutch visitors", () => {
     const formatted = formatServicePrice(
       { priceType: "from", priceMin: 135, priceMax: null },
-      "nl"
+      "nl",
     );
 
     expect(formatted).toContain("Vanaf");
@@ -16,7 +16,7 @@ describe("formatServicePrice", () => {
   it("formats ranges for English visitors", () => {
     const formatted = formatServicePrice(
       { priceType: "range", priceMin: 250, priceMax: 650 },
-      "en"
+      "en",
     );
 
     expect(formatted).toContain("250");
@@ -27,8 +27,17 @@ describe("formatServicePrice", () => {
     expect(
       formatServicePrice(
         { priceType: "on_request", priceMin: null, priceMax: null },
-        "fr"
-      )
+        "fr",
+      ),
     ).toBe("Sur demande");
+  });
+
+  it("formats fixed prices", () => {
+    const formatted = formatServicePrice(
+      { priceType: "fixed", priceMin: 95, priceMax: null },
+      "en",
+    );
+
+    expect(formatted).toContain("95");
   });
 });

@@ -5,6 +5,7 @@ import {
   parseContactLeadForm,
   type ContactLeadActionState,
 } from "@/lib/leads/contact";
+import { checkPublicFormRateLimit } from "@/lib/rate-limit/public-forms";
 import { hasSupabaseEnv } from "@/lib/supabase/env";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
@@ -31,6 +32,20 @@ export async function submitContactLead(
   }
 
   const lead = parsed.data;
+  const rateLimit = await checkPublicFormRateLimit({
+    scope: "contact-lead",
+    email: lead.email,
+    phone: lead.phone,
+  });
+
+  if (!rateLimit.allowed) {
+    return {
+      status: "error",
+      fieldErrors: {},
+      formError: "rateLimit",
+    };
+  }
+
   const supabase = await createSupabaseServerClient();
   const { error } = await supabase.from("leads").insert({
     name: lead.name,

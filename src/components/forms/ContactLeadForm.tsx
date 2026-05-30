@@ -49,6 +49,7 @@ type ContactLeadFormCopy = {
     validation: string;
     setup: string;
     submit: string;
+    rateLimit: string;
   };
   validation: Record<ContactLeadFieldErrorCode, string>;
 };
@@ -100,9 +101,11 @@ export function ContactLeadForm({ locale, copy }: ContactLeadFormProps) {
       ? copy.status.setup
       : state.formError === "submit"
         ? copy.status.submit
-        : state.formError === "validation"
-          ? copy.status.validation
-          : undefined;
+        : state.formError === "rateLimit"
+          ? copy.status.rateLimit
+          : state.formError === "validation"
+            ? copy.status.validation
+            : undefined;
 
   return (
     <form

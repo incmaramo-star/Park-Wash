@@ -14,6 +14,12 @@ Rules:
 
 ## 2026-05-30
 
+- Completed issue #6 public form rate limiting: contact lead submissions now
+  pass the server-only Upstash Redis limiter before Supabase writes.
+- Added hashed route-scoped rate-limit identifiers for IP, email, and phone,
+  plus a production fail-closed path when Upstash env vars are missing.
+- Added localized generic retry-later contact form copy and unit coverage for
+  allowed, limited, missing-production-config, and local fallback behavior.
 - Completed issue #5 contact lead submission: the localized contact form now
   validates client-side where useful and server-side with Zod before inserting
   Supabase `leads` rows.

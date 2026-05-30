@@ -52,6 +52,8 @@ krijgt pas succes te zien nadat de reservatie server-side bevestigd is.
   wijzigen.
 - Contact- en bookingforms moeten rate limiting, bot protection, consent en
   privacycopy bevatten.
+- Publieke contact-lead writes moeten door de server-only rate limiter voordat
+  Supabase een lead insert krijgt.
 
 ---
 
@@ -305,6 +307,9 @@ leads
 - Publieke contact-lead writes zijn beperkt tot anonieme inserts met
   `source = 'contact_form'`, `status = 'new'` en expliciete
   `privacy_consent_at`; publieke reads blijven dicht.
+- Contact-lead inserts worden vooraf rate-limited via Upstash Redis in
+  productie; Redis keys bevatten alleen scope en gehashte identifiers, geen
+  ruwe IP-, e-mail- of telefoonwaarden.
 
 ---
 

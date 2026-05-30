@@ -5,11 +5,10 @@ small and update it after each completed work package.
 
 ## Now
 
-- [ ] Implement Vercel Upstash rate-limit helper for public form mutations.
+- [ ] Configure Vercel Bot Protection managed ruleset before public form launch.
 
 ## Next
 
-- [ ] Configure Vercel Bot Protection managed ruleset before public form launch.
 - [ ] Add admin leads overview.
 
 ## Services And Pricing
@@ -53,6 +52,16 @@ small and update it after each completed work package.
 
 ## Done
 
+- [x] Issue #6: contact lead submission now checks the server-only
+      Upstash-backed public form rate limiter before writing to Supabase.
+- [x] Issue #6: rate-limit Redis keys use route scope plus hashed IP, email,
+      and phone identifiers instead of raw visitor data.
+- [x] Issue #6: production contact submissions fail closed when required
+      Upstash Redis env vars are missing, while local development has an
+      explicit permissive fallback.
+- [x] Issue #6: contact users receive a generic retry-later message when
+      limited, with unit coverage for allowed, limited, missing-production-config,
+      and local fallback behavior.
 - [x] Issue #5: contact form now validates in the client/browser where useful
       and on the server with Zod before writing leads.
 - [x] Issue #5: contact lead submission writes Supabase `leads` rows only

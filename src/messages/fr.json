@@ -283,7 +283,8 @@
         "success": "Merci, votre message est enregistre. Park&Wash suivra votre demande personnellement.",
         "validation": "Verifiez les champs marques et reessayez.",
         "setup": "Le formulaire est temporairement indisponible. Reessayez plus tard ou contactez-nous directement.",
-        "submit": "Votre message n'a pas pu etre envoye. Reessayez plus tard ou contactez-nous directement."
+        "submit": "Votre message n'a pas pu etre envoye. Reessayez plus tard ou contactez-nous directement.",
+        "rateLimit": "Trop de demandes temporairement. Reessayez plus tard ou contactez-nous directement."
       },
       "validation": {
         "required": "Remplissez ce champ.",

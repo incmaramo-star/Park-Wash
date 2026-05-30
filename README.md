@@ -79,3 +79,25 @@ npm run test
 npm run test:e2e
 npm run build
 ```
+
+## Environment
+
+Use `.env.local.example` as the local template. Public contact form
+submissions require these Supabase values to write leads:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+```
+
+Production public form submissions also require Vercel Marketplace Upstash
+Redis:
+
+```bash
+UPSTASH_REDIS_REST_URL=
+UPSTASH_REDIS_REST_TOKEN=
+```
+
+Local development without the Upstash variables uses the explicit permissive
+rate-limit fallback. Production fails closed when they are missing.

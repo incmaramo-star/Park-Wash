@@ -1,0 +1,103 @@
+{
+  "Navigation": {
+    "primaryLabel": "Primaire navigatie",
+    "home": "Home",
+    "services": "Diensten",
+    "about": "Over ons",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "quote": "Offerte aanvragen",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "localeLabel": "Taal kiezen"
+  },
+  "Footer": {
+    "body": "Mobiele autoreiniging voor particulieren en bedrijven in Oost-Vlaanderen.",
+    "contact": "Contact",
+    "area": "Werkgebied: Oost-Vlaanderen",
+    "copyright": "2026 Park&Wash"
+  },
+  "HomePage": {
+    "eyebrow": "Mobiele detailing",
+    "title": "Showroom klaar, zonder dat jij tijd verliest.",
+    "subtitle": "Park&Wash reinigt voertuigen aan huis of op locatie voor particulieren, KMO's en autodealers.",
+    "primaryAction": "Bekijk diensten",
+    "secondaryAction": "Neem contact op",
+    "servicePreviewLabel": "Startprijzen",
+    "services": {
+      "basic": {
+        "title": "Basic detail",
+        "body": "Handwas, velgen, banden, ramen, matten en detailafwerking."
+      },
+      "intense": {
+        "title": "Intense detail",
+        "body": "Complete buitenwas met volledige interieurreiniging."
+      },
+      "paint": {
+        "title": "Lakcorrecties",
+        "body": "Correctie van lakdefecten voor meer glans en diepte."
+      },
+      "coating": {
+        "title": "Coatings",
+        "body": "Bescherming voor lak en afwerking met langdurig effect."
+      },
+      "fleet": {
+        "title": "Bedrijven en vloten",
+        "body": "Wagenparkzorg, dealer-ready reiniging en proefbeurten."
+      }
+    },
+    "proof": {
+      "trust": {
+        "title": "Transparant",
+        "body": "Startprijzen zijn duidelijk en worden later via admin beheerd."
+      },
+      "mobile": {
+        "title": "Mobiel",
+        "body": "De service komt aan huis of op locatie, afgestemd op planning en regio."
+      },
+      "business": {
+        "title": "Voor bedrijven",
+        "body": "Fleet en dealer-ready pakketten blijven apart opvolgbaar."
+      }
+    }
+  },
+  "ServicesPage": {
+    "eyebrow": "Diensten",
+    "title": "Kies je dienst en vraag een offerte of contactmoment aan.",
+    "body": "Deze preview helpt bezoekers de juiste dienst te vinden. Online reserveren komt pas later, zodra echte beschikbaarheid server-side wordt bevestigd."
+  },
+  "AboutPage": {
+    "eyebrow": "Over ons",
+    "title": "Mobiele reiniging uit Melle, gebouwd op vertrouwen en precisie.",
+    "body": "Hier komt het verhaal, de werkwijze en waarom klanten Park&Wash hun sleutel kunnen toevertrouwen."
+  },
+  "PortfolioPage": {
+    "eyebrow": "Portfolio",
+    "title": "Before en after beelden krijgen hier een sterke plek.",
+    "body": "Deze pagina wordt later gevuld met echte projecten, beelden en resultaatcategorieen."
+  },
+  "ContactPage": {
+    "eyebrow": "Contact",
+    "title": "Contact is nu het startpunt voor elke aanvraag.",
+    "body": "Het formulier wordt later gekoppeld aan Supabase en maakt dan een lead aan in het admin dashboard. Tot de booking-engine live is, blijft opvolging handmatig."
+  },
+  "BookingPage": {
+    "eyebrow": "Preview",
+    "title": "Online boeken is nog niet actief.",
+    "body": "Park&Wash neemt aanvragen nu via contact of offerte op. De booking wizard komt pas live wanneer echte beschikbaarheid en server-side reservatiebevestiging klaar zijn.",
+    "action": "Offerte aanvragen"
+  },
+  "PrivacyConsent": {
+    "privacyLink": "Lees ons privacybeleid",
+    "contact": {
+      "label": "Ik ga ermee akkoord dat Park&Wash mijn gegevens gebruikt om mijn vraag te beantwoorden.",
+      "notice": "We gebruiken je naam, contactgegevens en bericht alleen om je aanvraag te behandelen en eventueel op te volgen. We delen je gegevens niet met derden voor marketing.",
+      "error": "Bevestig je toestemming om je bericht te verzenden."
+    },
+    "booking": {
+      "label": "Ik ga ermee akkoord dat Park&Wash mijn gegevens gebruikt om mijn aanvraag te beantwoorden en een offerte of contactmoment op te volgen.",
+      "notice": "We gebruiken je gegevens alleen om je aanvraag te behandelen, een offerte af te stemmen en je te contacteren bij vragen. Een online reservatie wordt pas later bevestigd via de server-side booking-flow.",
+      "error": "Bevestig je toestemming om je aanvraag verder te zetten."
+    }
+  }
+}

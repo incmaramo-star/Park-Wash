@@ -1,0 +1,97 @@
+# Todo
+
+This is the operational checklist for the next implementation rounds. Keep it
+small and update it after each completed work package.
+
+## Now
+
+- [ ] Polish layout and navigation beyond bootstrap placeholders.
+
+## Next
+
+- [ ] Build real Home page sections: hero, services preview, trust, CTA.
+- [ ] Build Particulier/Bedrijf choice page.
+- [ ] Build About page with real story and process.
+- [ ] Build Portfolio page structure with placeholder galleries.
+- [ ] Build Contact page UI.
+- [ ] Implement Vercel Upstash rate-limit helper for public form mutations.
+- [ ] Configure Vercel Bot Protection managed ruleset before public form launch.
+- [ ] Implement contact form validation with Zod.
+- [ ] Implement contact lead server mutation.
+- [ ] Add public insert policy for `leads`.
+- [ ] Add admin leads overview.
+
+## Services And Pricing
+
+- [ ] Build admin services/pricing CRUD.
+- [ ] Add draft/published/archived controls.
+- [ ] Add E2E: draft service does not appear in booking/public flow.
+- [ ] Add E2E: admin price update appears in public UI.
+
+## Availability And Booking
+
+- [ ] Define exact service area and allowed postal codes.
+- [ ] Implement availability rules UI or seed configuration.
+- [ ] Implement blocked slots/days.
+- [ ] Implement booking slot generation as pure functions.
+- [ ] Add unit tests for duration, buffers, blocked slots and overlaps.
+- [ ] Build booking wizard steps.
+- [ ] Add server-side final reservation validation.
+- [ ] Store booking snapshots for service name and pricing fields.
+- [ ] Add E2E booking happy path.
+- [ ] Add E2E booking conflict path.
+
+## Admin Operations
+
+- [ ] Build bookings overview.
+- [ ] Build booking status changes: confirmed, completed, cancelled, rescheduled.
+- [ ] Build leads status changes: new, contacted, converted, closed.
+- [ ] Build availability management.
+- [ ] Add admin empty/loading/error states.
+
+## Launch Polish
+
+- [ ] Replace placeholder content with final copy in `nl`, `fr`, `en`.
+- [ ] Add real photos/video or approved launch placeholders.
+- [ ] Run mobile visual QA.
+- [ ] Run Lighthouse performance/accessibility checks.
+- [ ] Confirm domain name.
+- [ ] Confirm production Supabase project and env vars.
+- [ ] Confirm Vercel project setup.
+- [ ] Run full launch gate.
+
+## Done
+
+- [x] Issue #1: public preview CTA guardrails route visitors to contact/quote
+      intent and keep booking copy honest until server-confirmed reservation is
+      implemented.
+- [x] Planning and brand baseline committed.
+- [x] Next.js bootstrap foundation.
+- [x] Tailwind/token integration.
+- [x] Locale routes for `nl`, `fr`, `en`.
+- [x] Placeholder public pages.
+- [x] Supabase client factories.
+- [x] Initial schema migration and dev seed.
+- [x] Vitest and Playwright smoke tests.
+- [x] Admin login route.
+- [x] Server-side admin guard.
+- [x] Temporary owner allowlist: `lahdhirilouay21@gmail.com`.
+- [x] Anonymous `/admin` redirects to `/admin/login`.
+- [x] Docker Desktop local setup.
+- [x] `supabase db reset` completed successfully.
+- [x] Verified migration, seed services and temporary admin allowlist locally.
+- [x] Added automatic dev and weekly log workflow.
+- [x] Created local `.env.local` from `supabase status` values.
+- [x] Created local Supabase Auth user for `lahdhirilouay21@gmail.com`.
+- [x] Ran app against local Supabase and verified `/admin/login`.
+- [x] Added opt-in E2E coverage for allowlisted admin login.
+- [x] Added pgTAP RLS verification for public, non-admin, and admin access.
+- [x] Decided Vercel Marketplace Upstash Redis rate limiting approach for public forms.
+- [x] Decided Vercel Bot Protection provider for launch bot management.
+- [x] Added privacy/consent source copy for contact and booking forms.
+- [x] Confirmed production admin allowlist starts owner-only with `lahdhirilouay21@gmail.com`.
+- [x] Created a short standalone HTML site mockup in `docs/mockups/site-preview.html`.
+- [x] Created a standalone HTML booking wizard mockup in `docs/mockups/booking-wizard.html`.
+- [x] Refreshed PRD source-of-truth map, launch gaps, and doodlopende-sporen list.
+- [x] Chose contact-first preview as the first MVP launch level.
+- [x] Published contact-first preview vertical slices as GitHub issues #1-#9.

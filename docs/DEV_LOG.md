@@ -14,6 +14,13 @@ Rules:
 
 ## 2026-05-30
 
+- Completed issue #2 published services read path: homepage service preview
+  now reads Supabase `services` records filtered to
+  `visibility_status = 'published'`.
+- Added unit coverage for localized service row mapping, draft/archived
+  filtering, query shape, and all supported service price types.
+- Updated `docs/TODO.md`, `docs/WEEKLY_LOG.md`, and service architecture notes
+  for the published services read path.
 - Completed issue #1 preview CTA guardrails: public header/mobile CTA now routes
   to contact/quote intent, booking placeholder copy states online booking is not
   active yet, and Playwright smoke coverage checks the promise in `nl`, `fr`,

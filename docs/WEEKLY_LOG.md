@@ -25,6 +25,8 @@ Highlights:
 - Completed issue #1 preview CTA guardrails: public CTAs now point to
   contact/quote intent and direct booking copy says online booking is not active
   yet.
+- Completed issue #2 published services read path: the homepage service preview
+  now uses Supabase published service records instead of inline pricing data.
 - Configured repo-specific Matt Pocock skill metadata for GitHub Issues,
   default triage labels, and single-context domain docs.
 - Refreshed the PRD/current plan with the current product state,
@@ -36,8 +38,7 @@ Highlights:
 Current focus:
 
 - Polish layout and navigation beyond bootstrap placeholders.
-- Continue the first AFK slices: published services read path and privacy
-  policy/consent path.
+- Continue the first AFK slices: privacy policy/consent path.
 
 Risks / watch points:
 

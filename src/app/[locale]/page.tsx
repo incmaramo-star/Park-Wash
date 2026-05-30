@@ -1,11 +1,14 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
-import { formatServicePrice, type ServicePricing } from "@/lib/pricing/format";
+import { formatServicePrice } from "@/lib/pricing/format";
+import { getPublishedServices } from "@/lib/services/public";
 
 type Props = {
   params: Promise<{ locale: string }>;
 };
+
+export const dynamic = "force-dynamic";
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
@@ -13,43 +16,7 @@ export default async function HomePage({ params }: Props) {
 
   const t = await getTranslations({ locale, namespace: "HomePage" });
 
-  const services: Array<ServicePricing & { title: string; body: string }> = [
-    {
-      title: t("services.basic.title"),
-      body: t("services.basic.body"),
-      priceType: "from",
-      priceMin: 135,
-      priceMax: null
-    },
-    {
-      title: t("services.intense.title"),
-      body: t("services.intense.body"),
-      priceType: "from",
-      priceMin: 185,
-      priceMax: null
-    },
-    {
-      title: t("services.paint.title"),
-      body: t("services.paint.body"),
-      priceType: "range",
-      priceMin: 250,
-      priceMax: 650
-    },
-    {
-      title: t("services.coating.title"),
-      body: t("services.coating.body"),
-      priceType: "range",
-      priceMin: 500,
-      priceMax: 1200
-    },
-    {
-      title: t("services.fleet.title"),
-      body: t("services.fleet.body"),
-      priceType: "on_request",
-      priceMin: null,
-      priceMax: null
-    }
-  ];
+  const services = await getPublishedServices(locale);
 
   return (
     <div>

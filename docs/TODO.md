@@ -9,7 +9,7 @@ small and update it after each completed work package.
 
 ## Next
 
-- [ ] Add admin leads overview.
+- [ ] Build admin services/pricing CRUD.
 
 ## Services And Pricing
 
@@ -52,6 +52,10 @@ small and update it after each completed work package.
 
 ## Done
 
+- [x] Issue #7: `/admin` now shows submitted contact leads to allowlisted
+      admins, including empty, loading, and generic error states.
+- [x] Issue #7: admin lead visibility is covered by explicit read-path unit
+      tests plus pgTAP RLS checks for anon, non-admin, and admin users.
 - [x] Issue #6: contact lead submission now checks the server-only
       Upstash-backed public form rate limiter before writing to Supabase.
 - [x] Issue #6: rate-limit Redis keys use route scope plus hashed IP, email,

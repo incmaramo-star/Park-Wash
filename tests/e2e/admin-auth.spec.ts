@@ -20,8 +20,9 @@ test.describe("admin auth", () => {
 
     await expect(page).toHaveURL(/\/admin$/);
     await expect(
-      page.getByRole("heading", { name: "Park&Wash dashboard" })
+      page.getByRole("heading", { name: "Contactleads" })
     ).toBeVisible();
+    await expect(page.getByText("allowlisted admins")).toBeVisible();
     await expect(page.getByText(adminEmail!)).toBeVisible();
   });
 });

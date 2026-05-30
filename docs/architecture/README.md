@@ -14,10 +14,13 @@ The app is a Next.js App Router project with:
 - contact lead submission through a Server Action with Zod validation,
   explicit consent, Upstash-backed rate limiting, generic failure handling, and
   server-confirmed Supabase insert feedback
+- protected `/admin` contact leads overview for allowlisted admins, with
+  empty, loading, and generic error states
 - a booking preview page that keeps direct reservation unavailable until
   server-confirmed availability is implemented
 - localized privacy-policy page with footer and public consent links
-- protected `/admin` shell with Supabase login and email allowlist
+- protected `/admin` shell with Supabase login, email allowlist, and contact
+  lead follow-up visibility
 - Tailwind CSS wired to Park&Wash tokens
 - next-intl routing through `src/proxy.ts`
 - Supabase browser/server client factories
@@ -81,6 +84,10 @@ src/
   `src/app/[locale]/contact/actions.ts`, validates via
   `src/lib/leads/contact.ts`, checks the public form rate limiter, and inserts
   a `leads` row only after validation, consent, and rate limiting pass.
+- The protected admin dashboard reads contact leads through
+  `src/lib/leads/admin.ts`, selecting only the fields needed for operational
+  follow-up and relying on the signed-in admin session plus `leads` RLS for
+  visibility.
 - Public lead writes are opened narrowly by
   `supabase/migrations/20260530130428_contact_lead_public_insert.sql`: anon can
   insert `contact_form` leads with `status = 'new'` and recent
@@ -93,6 +100,9 @@ src/
 - `/admin/login` signs in with Supabase Auth.
 - `/admin` is protected by `src/app/admin/(protected)/layout.tsx`.
 - `src/lib/auth/admin.ts` is the central server-side admin guard.
+- `/admin` lists submitted contact leads after the allowlist check succeeds.
+  Query failures render generic copy and do not expose raw Supabase errors or
+  lead data.
 - An authenticated user is only an admin when `admin_users.is_active = true`
   and either:
   - `admin_users.user_id = auth.uid()`, or
@@ -179,10 +189,14 @@ Notes:
 - Contact smoke coverage checks that the form entry point renders across
   launch locales; unit coverage checks validation/consent parsing and public
   form rate-limit allowed, limited, and missing-production-config behavior.
+- Admin lead unit coverage checks the read helper query shape, row mapping, and
+  generic query error handling.
 - Public accessibility smoke coverage runs against home, services, about,
   portfolio, and contact.
 - `npm run test:db` runs `supabase test db`, including the pgTAP RLS
-  verification suite in `supabase/tests/rls_public_admin_access.sql`.
+  verification suite in `supabase/tests/rls_public_admin_access.sql`, including
+  lead-detail read denial for anon/non-admin users and lead-detail read access
+  for allowlisted admins.
 - `package.json` overrides PostCSS to a patched `8.5.10+` line because the
   current Next dependency tree otherwise triggers an NPM audit advisory.
 - `supabase db reset` and `npm run test:db` require Docker Desktop and the

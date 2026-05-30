@@ -11,6 +11,7 @@ The app is a Next.js App Router project with:
 - public locale routes for `/nl`, `/fr`, and `/en`
 - placeholder public pages for home, services, about, portfolio, contact, and
   booking
+- localized privacy-policy page with footer and public consent links
 - protected `/admin` shell with Supabase login and email allowlist
 - Tailwind CSS wired to Park&Wash tokens
 - next-intl routing through `src/proxy.ts`
@@ -132,9 +133,8 @@ prices shown in public previews come from admin-managed Supabase records.
   `src/messages/{locale}.json` under `PrivacyConsent`.
 - The copy covers checkbox labels, short privacy notices, validation errors,
   and privacy-policy link text for `nl`, `fr`, and `en`.
-- This is practical launch form copy. It does not replace a full privacy policy;
-  add a real privacy-policy page before production launch and link the form
-  copy to it.
+- The localized privacy-policy page lives at `/{locale}/privacy-policy`.
+- Contact and booking consent notices link to the localized privacy policy.
 
 ## Testing
 
@@ -170,6 +170,5 @@ place.
 
 Remaining auth/security work:
 
-- full privacy-policy page and final form privacy links
 - implementation of the decided Upstash-backed public form rate limiter
 - Vercel Bot Protection managed ruleset configuration before form launch

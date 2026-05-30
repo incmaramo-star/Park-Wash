@@ -15,6 +15,24 @@ const previewLocales = {
   }
 };
 
+const privacyLabels = {
+  nl: {
+    consent: "Lees ons privacybeleid",
+    footer: "Privacybeleid",
+    heading: "Privacybeleid"
+  },
+  fr: {
+    consent: "Lire notre politique de confidentialite",
+    footer: "Politique de confidentialite",
+    heading: "Politique de confidentialite"
+  },
+  en: {
+    consent: "Read our privacy policy",
+    footer: "Privacy policy",
+    heading: "Privacy policy"
+  }
+};
+
 for (const locale of ["nl", "fr", "en"] as const) {
   test(`home page loads for ${locale}`, async ({ page }) => {
     await page.goto(`/${locale}`);
@@ -51,6 +69,35 @@ for (const locale of ["nl", "fr", "en"] as const) {
     ).toHaveAttribute("href", new RegExp(`/${locale}/contact$`));
   });
 
+  test(`privacy policy links are wired for ${locale}`, async ({ page }) => {
+    await page.goto(`/${locale}/contact`);
+    await expect(
+      page.getByRole("main").getByRole("link", {
+        name: privacyLabels[locale].consent
+      })
+    ).toHaveAttribute("href", new RegExp(`/${locale}/privacy-policy$`));
+
+    await page.goto(`/${locale}/booking`);
+    await expect(
+      page.getByRole("main").getByRole("link", {
+        name: privacyLabels[locale].consent
+      })
+    ).toHaveAttribute("href", new RegExp(`/${locale}/privacy-policy$`));
+
+    await page.goto(`/${locale}`);
+    await page
+      .locator("footer")
+      .getByRole("link", { name: privacyLabels[locale].footer })
+      .click();
+
+    await expect(page).toHaveURL(new RegExp(`/${locale}/privacy-policy$`));
+    await expect(
+      page.getByRole("heading", {
+        level: 1,
+        name: privacyLabels[locale].heading
+      })
+    ).toBeVisible();
+  });
 }
 
 test("anonymous admin access redirects to login", async ({ page }) => {

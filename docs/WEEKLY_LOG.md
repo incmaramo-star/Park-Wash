@@ -27,6 +27,8 @@ Highlights:
   yet.
 - Completed issue #2 published services read path: the homepage service preview
   now uses Supabase published service records instead of inline pricing data.
+- Completed issue #3 privacy policy and consent path with locale parity for
+  footer, contact, booking, and the privacy-policy page.
 - Configured repo-specific Matt Pocock skill metadata for GitHub Issues,
   default triage labels, and single-context domain docs.
 - Refreshed the PRD/current plan with the current product state,
@@ -38,14 +40,14 @@ Highlights:
 Current focus:
 
 - Polish layout and navigation beyond bootstrap placeholders.
-- Continue the first AFK slices: privacy policy/consent path.
+- Continue the first AFK slices toward the protected contact lead flow.
 
 Risks / watch points:
 
 - Running GitHub or app commands from the parent `Park&Wash` folder hits the
   wrong repo; use the nested `Park-Wash` app repo.
-- Service area, production infrastructure, privacy policy, and real media are
-  still open launch blockers.
+- Service area, production infrastructure, and real media are still open launch
+  blockers.
 - Standalone mockups and the completed bootstrap plan are references, not
   current implementation truth.
 

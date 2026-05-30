@@ -14,13 +14,21 @@ Rules:
 
 ## 2026-05-30
 
+- Completed issue #3 privacy policy and consent path: added localized
+  `/privacy-policy` pages for `nl`, `fr`, and `en`.
+- Linked footer privacy access plus contact and booking consent copy to the
+  localized privacy policy.
+- Added Playwright smoke coverage for privacy links across launch locales.
+- Updated `docs/TODO.md`, `docs/WEEKLY_LOG.md`,
+  `docs/architecture/README.md`, `docs/ROADMAP.md`, `docs/PLAN.md`, and
+  `README.md` for the completed privacy-policy path.
 - Completed issue #2 published services read path: homepage service preview
   now reads Supabase `services` records filtered to
   `visibility_status = 'published'`.
 - Added unit coverage for localized service row mapping, draft/archived
   filtering, query shape, and all supported service price types.
-- Updated `docs/TODO.md`, `docs/WEEKLY_LOG.md`, and service architecture notes
-  for the published services read path.
+- Updated `docs/TODO.md`, `docs/WEEKLY_LOG.md`, and
+  `docs/architecture/README.md` for the published services read path.
 - Completed issue #1 preview CTA guardrails: public header/mobile CTA now routes
   to contact/quote intent, booking placeholder copy states online booking is not
   active yet, and Playwright smoke coverage checks the promise in `nl`, `fr`,

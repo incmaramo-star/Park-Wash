@@ -14,6 +14,7 @@
   "Footer": {
     "body": "Mobile auto detailing for private customers and businesses in East Flanders.",
     "contact": "Contact",
+    "privacyPolicy": "Privacy policy",
     "area": "Service area: East Flanders",
     "copyright": "2026 Park&Wash"
   },
@@ -87,14 +88,60 @@
     "body": "Park&Wash is handling requests through contact or quote intent for now. The booking wizard only goes live once real availability and server-side reservation confirmation are ready.",
     "action": "Request a quote"
   },
+  "PrivacyPolicyPage": {
+    "eyebrow": "Privacy",
+    "title": "Privacy policy",
+    "body": "How Park&Wash handles personal data when you contact us or later request a booking.",
+    "lastUpdated": "Last updated: May 30, 2026",
+    "sections": {
+      "controller": {
+        "title": "Controller",
+        "body": "Park&Wash processes the details you enter in public forms or share directly through contact."
+      },
+      "data": {
+        "title": "Data we process",
+        "body": "For contact requests this includes your name, contact details, message, customer type and possible company details. For bookings we may later also need address, selected service, date, time slot and practical notes."
+      },
+      "purposes": {
+        "title": "Why we use data",
+        "body": "We use data to answer your question, follow up quotes or appointments, plan a mobile service and meet legal or administrative obligations."
+      },
+      "legalBasis": {
+        "title": "Legal basis",
+        "body": "We process form details based on your consent and, when an appointment or quote follows, to take pre-contractual or contractual steps."
+      },
+      "sharing": {
+        "title": "Sharing and processors",
+        "body": "Park&Wash does not sell personal data and does not share it with third parties for marketing. Technical providers such as hosting, database, email or security providers process data only to operate the website and administration."
+      },
+      "retention": {
+        "title": "Retention",
+        "body": "Leads and appointment details are kept no longer than needed for follow-up, customer service, accounting and legal obligations. Test or incorrect data is removed when it is no longer needed."
+      },
+      "rights": {
+        "title": "Your rights",
+        "body": "You can ask for access, correction, deletion, restriction or portability of your data. You can withdraw consent for future processing when consent is the legal basis."
+      },
+      "security": {
+        "title": "Security",
+        "body": "We limit access to personal data to allowlisted admins and use technical controls such as database security, server-side validation, rate limiting and bot protection for public forms."
+      },
+      "contact": {
+        "title": "Privacy contact",
+        "body": "Use the contact page to ask a privacy question or send a request about your personal data. We handle privacy requests as quickly as possible."
+      }
+    }
+  },
   "PrivacyConsent": {
     "privacyLink": "Read our privacy policy",
     "contact": {
+      "title": "Privacy for your question",
       "label": "I agree that Park&Wash may use my details to respond to my question.",
       "notice": "We use your name, contact details and message only to handle your request and follow up if needed. We do not share your details with third parties for marketing.",
       "error": "Confirm your consent to send your message."
     },
     "booking": {
+      "title": "Privacy for your request",
       "label": "I agree that Park&Wash may use my details to respond to my request and follow up on a quote or callback.",
       "notice": "We use your details only to handle your request, prepare a quote and contact you with questions. Online reservations will only be confirmed later through the server-side booking flow.",
       "error": "Confirm your consent to continue your request."

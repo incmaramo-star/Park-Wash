@@ -24,6 +24,12 @@ export async function Footer({ locale }: FooterProps) {
           <Link className="focus-ring hover:text-pw-white" href="/contact">
             {t("contact")}
           </Link>
+          <Link
+            className="focus-ring hover:text-pw-white"
+            href="/privacy-policy"
+          >
+            {t("privacyPolicy")}
+          </Link>
           <span>{t("area")}</span>
           <span>{t("copyright")}</span>
         </div>

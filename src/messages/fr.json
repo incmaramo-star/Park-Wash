@@ -14,6 +14,7 @@
   "Footer": {
     "body": "Detailing mobile pour particuliers et entreprises en Flandre orientale.",
     "contact": "Contact",
+    "privacyPolicy": "Politique de confidentialite",
     "area": "Zone: Flandre orientale",
     "copyright": "2026 Park&Wash"
   },
@@ -87,14 +88,60 @@
     "body": "Park&Wash traite maintenant les demandes via contact ou devis. Le wizard de reservation ne sera mis en ligne que lorsque la disponibilite reelle et la confirmation serveur seront pretes.",
     "action": "Demander un devis"
   },
+  "PrivacyPolicyPage": {
+    "eyebrow": "Confidentialite",
+    "title": "Politique de confidentialite",
+    "body": "Comment Park&Wash traite les donnees personnelles lorsque vous prenez contact ou demandez plus tard une reservation.",
+    "lastUpdated": "Derniere mise a jour: 30 mai 2026",
+    "sections": {
+      "controller": {
+        "title": "Responsable du traitement",
+        "body": "Park&Wash traite les donnees que vous saisissez dans les formulaires publics ou que vous partagez directement par contact."
+      },
+      "data": {
+        "title": "Donnees traitees",
+        "body": "Pour les demandes de contact, il s'agit du nom, des coordonnees, du message, du type de client et des donnees d'entreprise eventuelles. Pour les reservations, l'adresse, le service choisi, la date, le creneau et les remarques pratiques pourront aussi etre necessaires."
+      },
+      "purposes": {
+        "title": "Pourquoi nous utilisons les donnees",
+        "body": "Nous utilisons les donnees pour repondre a votre demande, suivre les devis ou rendez-vous, planifier un service mobile et respecter les obligations legales ou administratives."
+      },
+      "legalBasis": {
+        "title": "Base legale",
+        "body": "Nous traitons les donnees de formulaire sur la base de votre consentement et, lorsqu'un rendez-vous ou devis suit, pour executer des mesures precontractuelles ou contractuelles."
+      },
+      "sharing": {
+        "title": "Partage et sous-traitants",
+        "body": "Park&Wash ne vend pas les donnees personnelles et ne les partage pas avec des tiers a des fins de marketing. Les fournisseurs techniques comme l'hebergement, la base de donnees, l'e-mail ou la securite traitent les donnees uniquement pour le fonctionnement du site et de l'administration."
+      },
+      "retention": {
+        "title": "Duree de conservation",
+        "body": "Les leads et donnees de rendez-vous ne sont pas conserves plus longtemps que necessaire pour le suivi, le service client, la comptabilite et les obligations legales. Les donnees de test ou erronees sont supprimees des qu'elles ne sont plus utiles."
+      },
+      "rights": {
+        "title": "Vos droits",
+        "body": "Vous pouvez demander l'acces, la correction, la suppression, la limitation ou la portabilite de vos donnees. Vous pouvez retirer votre consentement pour les traitements futurs lorsque le consentement est la base legale."
+      },
+      "security": {
+        "title": "Securite",
+        "body": "Nous limitons l'acces aux donnees personnelles aux admins autorises et utilisons des controles techniques comme la securite de base de donnees, la validation cote serveur, le rate limiting et la protection bot pour les formulaires publics."
+      },
+      "contact": {
+        "title": "Contact confidentialite",
+        "body": "Utilisez la page de contact pour poser une question confidentialite ou envoyer une demande concernant vos donnees personnelles. Nous traitons les demandes confidentialite aussi vite que possible."
+      }
+    }
+  },
   "PrivacyConsent": {
     "privacyLink": "Lire notre politique de confidentialite",
     "contact": {
+      "title": "Confidentialite de votre demande",
       "label": "J'accepte que Park&Wash utilise mes donnees pour repondre a ma demande.",
       "notice": "Nous utilisons votre nom, vos coordonnees et votre message uniquement pour traiter votre demande et assurer le suivi si necessaire. Nous ne partageons pas vos donnees avec des tiers a des fins de marketing.",
       "error": "Confirmez votre consentement pour envoyer votre message."
     },
     "booking": {
+      "title": "Confidentialite de votre demande",
       "label": "J'accepte que Park&Wash utilise mes donnees pour repondre a ma demande et suivre un devis ou un contact.",
       "notice": "Nous utilisons vos donnees uniquement pour traiter votre demande, preparer un devis et vous contacter en cas de question. Une reservation en ligne ne sera confirmee plus tard que via le flux serveur.",
       "error": "Confirmez votre consentement pour continuer votre demande."

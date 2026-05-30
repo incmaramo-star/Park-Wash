@@ -97,3 +97,4 @@ small and update it after each completed work package.
 - [x] Published contact-first preview vertical slices as GitHub issues #1-#9.
 - [x] Issue #2: public service query helpers read Supabase published services.
 - [x] Issue #2: homepage service preview uses Supabase service records instead of inline pricing data.
+- [x] Issue #3: localized privacy-policy page and public consent links.

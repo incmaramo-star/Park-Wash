@@ -14,6 +14,7 @@
   "Footer": {
     "body": "Mobiele autoreiniging voor particulieren en bedrijven in Oost-Vlaanderen.",
     "contact": "Contact",
+    "privacyPolicy": "Privacybeleid",
     "area": "Werkgebied: Oost-Vlaanderen",
     "copyright": "2026 Park&Wash"
   },
@@ -87,14 +88,60 @@
     "body": "Park&Wash neemt aanvragen nu via contact of offerte op. De booking wizard komt pas live wanneer echte beschikbaarheid en server-side reservatiebevestiging klaar zijn.",
     "action": "Offerte aanvragen"
   },
+  "PrivacyPolicyPage": {
+    "eyebrow": "Privacy",
+    "title": "Privacybeleid",
+    "body": "Hoe Park&Wash persoonsgegevens verwerkt wanneer je contact opneemt of later een reservatie aanvraagt.",
+    "lastUpdated": "Laatst bijgewerkt: 30 mei 2026",
+    "sections": {
+      "controller": {
+        "title": "Verwerkingsverantwoordelijke",
+        "body": "Park&Wash verwerkt de gegevens die je zelf invult via publieke formulieren of rechtstreeks deelt via contact."
+      },
+      "data": {
+        "title": "Welke gegevens",
+        "body": "Voor contactvragen gaat het om naam, contactgegevens, bericht, klanttype en eventuele bedrijfsgegevens. Voor reservaties kan later ook adres, gekozen dienst, datum, tijdslot en praktische opmerkingen nodig zijn."
+      },
+      "purposes": {
+        "title": "Waarom we gegevens gebruiken",
+        "body": "We gebruiken gegevens om je vraag te beantwoorden, offertes of afspraken op te volgen, een mobiele service te plannen en wettelijke of administratieve verplichtingen na te komen."
+      },
+      "legalBasis": {
+        "title": "Rechtsgrond",
+        "body": "We verwerken formuliergegevens op basis van jouw toestemming en, wanneer een afspraak of offerte volgt, om precontractuele of contractuele stappen uit te voeren."
+      },
+      "sharing": {
+        "title": "Delen en verwerkers",
+        "body": "Park&Wash verkoopt geen persoonsgegevens en deelt ze niet met derden voor marketing. Technische leveranciers zoals hosting, database, e-mail of beveiliging verwerken gegevens alleen voor de werking van de website en administratie."
+      },
+      "retention": {
+        "title": "Bewaartermijn",
+        "body": "Leads en afspraakgegevens worden niet langer bewaard dan nodig voor opvolging, klantenservice, boekhouding en wettelijke verplichtingen. Test- of foutieve gegevens worden verwijderd zodra ze niet meer nodig zijn."
+      },
+      "rights": {
+        "title": "Jouw rechten",
+        "body": "Je kan vragen om inzage, correctie, verwijdering, beperking of overdraagbaarheid van je gegevens. Je kan toestemming intrekken voor toekomstige verwerking wanneer toestemming de grondslag is."
+      },
+      "security": {
+        "title": "Beveiliging",
+        "body": "We beperken toegang tot persoonsgegevens tot allowlisted admins en gebruiken technische controles zoals databasebeveiliging, server-side validatie, rate limiting en bot protection voor publieke formulieren."
+      },
+      "contact": {
+        "title": "Contact over privacy",
+        "body": "Gebruik de contactpagina om een privacyvraag te stellen of een verzoek over je persoonsgegevens te sturen. We behandelen privacyverzoeken zo snel mogelijk."
+      }
+    }
+  },
   "PrivacyConsent": {
     "privacyLink": "Lees ons privacybeleid",
     "contact": {
+      "title": "Privacy bij je vraag",
       "label": "Ik ga ermee akkoord dat Park&Wash mijn gegevens gebruikt om mijn vraag te beantwoorden.",
       "notice": "We gebruiken je naam, contactgegevens en bericht alleen om je aanvraag te behandelen en eventueel op te volgen. We delen je gegevens niet met derden voor marketing.",
       "error": "Bevestig je toestemming om je bericht te verzenden."
     },
     "booking": {
+      "title": "Privacy bij je aanvraag",
       "label": "Ik ga ermee akkoord dat Park&Wash mijn gegevens gebruikt om mijn aanvraag te beantwoorden en een offerte of contactmoment op te volgen.",
       "notice": "We gebruiken je gegevens alleen om je aanvraag te behandelen, een offerte af te stemmen en je te contacteren bij vragen. Een online reservatie wordt pas later bevestigd via de server-side booking-flow.",
       "error": "Bevestig je toestemming om je aanvraag verder te zetten."

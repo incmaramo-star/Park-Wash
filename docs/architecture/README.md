@@ -11,6 +11,9 @@ The app is a Next.js App Router project with:
 - public locale routes for `/nl`, `/fr`, and `/en`
 - contact-first public preview pages for home, services, about, portfolio, and
   contact in `nl`, `fr`, and `en`
+- contact lead submission through a Server Action with Zod validation,
+  explicit consent, generic failure handling, and server-confirmed Supabase
+  insert feedback
 - a booking preview page that keeps direct reservation unavailable until
   server-confirmed availability is implemented
 - localized privacy-policy page with footer and public consent links
@@ -33,8 +36,10 @@ src/
     globals.css        # Tailwind + brand token mapping
   components/
     layout/            # Header, Footer, MobileNav, LocaleSwitcher, Logo
+    forms/             # Consent notice and contact lead form
   i18n/                # next-intl routing, navigation, request config
   lib/
+    leads/             # contact lead validation and action state helpers
     pricing/           # price formatting helpers
     services/          # public/admin service read helpers
     supabase/          # lazy Supabase client factories
@@ -71,6 +76,14 @@ src/
   `services` from Supabase with `visibility_status = 'published'`, ordered by
   `sort_order`, and mapped to the active `nl`, `fr`, or `en` fields. Home and
   services public previews both use this read path.
+- The localized contact form submits through
+  `src/app/[locale]/contact/actions.ts`, validates via
+  `src/lib/leads/contact.ts`, and inserts a `leads` row only after validation
+  and consent pass.
+- Public lead writes are opened narrowly by
+  `supabase/migrations/20260530130428_contact_lead_public_insert.sql`: anon can
+  insert `contact_form` leads with `status = 'new'` and recent
+  `privacy_consent_at`; public reads and workflow-status writes remain closed.
 - Missing env vars throw only when a Supabase client is created, not at import
   time.
 
@@ -115,6 +128,8 @@ prices shown in public previews come from admin-managed Supabase records.
   should fail closed in production if rate-limit configuration is missing.
 - Local development may use an explicit permissive fallback until the Vercel
   Upstash resource is provisioned.
+- Issue #5 deliberately leaves this helper as the next slice; the current
+  contact action returns generic failures but does not rate-limit yet.
 
 ## Bot Protection
 
@@ -161,6 +176,8 @@ Notes:
 - Public smoke coverage checks the contact-first preview routes, mobile
   navigation, footer contact routing, and published service display across
   launch locales.
+- Contact smoke coverage checks that the form entry point renders across
+  launch locales; unit coverage checks validation/consent parsing.
 - Public accessibility smoke coverage runs against home, services, about,
   portfolio, and contact.
 - `npm run test:db` runs `supabase test db`, including the pgTAP RLS

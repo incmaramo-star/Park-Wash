@@ -7,6 +7,32 @@ decision, reason, impact, owner, review date.
 
 ---
 
+## 2026-05-30 - Keep public lead access insert-only and contact-scoped
+
+- **Status:** Decided
+- **Owner:** Project owner
+- **Decision:** Public visitors may create `leads` only through anonymous
+  inserts scoped to `source = 'contact_form'`, `status = 'new'`, and an
+  explicit recent `privacy_consent_at`. Public users may not read leads or set
+  admin workflow statuses.
+- **Reason:** The contact-first preview needs real lead capture, but leads
+  contain PII and must remain private until an allowlisted admin reviews them.
+- **Impact:**
+  - The contact form shows success only after the server action receives a
+    successful Supabase insert result.
+  - RLS stays default-closed for lead reads and non-contact writes.
+  - Admin lead follow-up remains a separate dashboard slice.
+- **Sources of truth:**
+  - RLS migration -
+    `supabase/migrations/20260530130428_contact_lead_public_insert.sql`
+  - Server validation - `src/lib/leads/contact.ts`
+  - Contact mutation - `src/app/[locale]/contact/actions.ts`
+  - RLS tests - `supabase/tests/rls_public_admin_access.sql`
+- **Review date:** Re-evaluate when admin lead management or public form rate
+  limiting changes the write path.
+
+---
+
 ## 2026-05-17 - Make services and pricing admin-managed
 
 - **Status:** Decided

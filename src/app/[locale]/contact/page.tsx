@@ -8,7 +8,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { ConsentNotice } from "@/components/forms/ConsentNotice";
+import { ContactLeadForm } from "@/components/forms/ContactLeadForm";
 import { PageIntro } from "@/components/layout/PageIntro";
 
 type Props = {
@@ -22,7 +22,6 @@ const entryKeys = [
 ] as const;
 
 const methodKeys = [
-  { key: "form", Icon: MessageSquareText },
   { key: "phone", Icon: PhoneCall },
   { key: "email", Icon: Mail },
 ] as const;
@@ -35,6 +34,63 @@ export default async function ContactPage({ params }: Props) {
     locale,
     namespace: "PrivacyConsent",
   });
+  const formCopy = {
+    title: t("form.title"),
+    body: t("form.body"),
+    fields: {
+      name: {
+        label: t("form.fields.name.label"),
+        placeholder: t("form.fields.name.placeholder"),
+      },
+      email: {
+        label: t("form.fields.email.label"),
+        placeholder: t("form.fields.email.placeholder"),
+      },
+      phone: {
+        label: t("form.fields.phone.label"),
+        placeholder: t("form.fields.phone.placeholder"),
+      },
+      customerType: {
+        label: t("form.fields.customerType.label"),
+        options: {
+          particular: t("form.fields.customerType.options.particular"),
+          business: t("form.fields.customerType.options.business"),
+        },
+      },
+      companyName: {
+        label: t("form.fields.companyName.label"),
+        placeholder: t("form.fields.companyName.placeholder"),
+      },
+      message: {
+        label: t("form.fields.message.label"),
+        placeholder: t("form.fields.message.placeholder"),
+      },
+      privacyConsent: {
+        title: consent("contact.title"),
+        label: consent("contact.label"),
+        notice: consent("contact.notice"),
+        linkLabel: consent("privacyLink"),
+      },
+    },
+    actions: {
+      submit: t("form.actions.submit"),
+      pending: t("form.actions.pending"),
+    },
+    status: {
+      success: t("form.status.success"),
+      validation: t("form.status.validation"),
+      setup: t("form.status.setup"),
+      submit: t("form.status.submit"),
+    },
+    validation: {
+      required: t("form.validation.required"),
+      tooShort: t("form.validation.tooShort"),
+      tooLong: t("form.validation.tooLong"),
+      email: t("form.validation.email"),
+      consent: consent("contact.error"),
+      invalid: t("form.validation.invalid"),
+    },
+  };
 
   return (
     <div className="bg-pw-paper">
@@ -73,6 +129,7 @@ export default async function ContactPage({ params }: Props) {
             </p>
           </div>
           <div className="grid gap-4">
+            <ContactLeadForm copy={formCopy} locale={locale} />
             {methodKeys.map(({ key, Icon }) => (
               <div
                 className="flex gap-4 rounded-md border border-pw-fog bg-pw-paper p-5"
@@ -113,12 +170,6 @@ export default async function ContactPage({ params }: Props) {
           </div>
         </div>
       </section>
-      <ConsentNotice
-        label={consent("contact.label")}
-        linkLabel={consent("privacyLink")}
-        notice={consent("contact.notice")}
-        title={consent("contact.title")}
-      />
     </div>
   );
 }

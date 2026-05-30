@@ -205,7 +205,7 @@
   "ContactPage": {
     "eyebrow": "Contact",
     "title": "Contact is nu het startpunt voor elke aanvraag.",
-    "body": "Deze preview bundelt offerte-, fleet- en planningsvragen terwijl het echte leadformulier nog server-side wordt gekoppeld.",
+    "body": "Deze preview bundelt offerte-, fleet- en planningsvragen en bewaart je bericht pas na toestemming en serverbevestiging.",
     "entries": {
       "quote": {
         "title": "Offerte voor een wagen",
@@ -222,13 +222,13 @@
     },
     "intake": {
       "eyebrow": "Aanvraagpad",
-      "title": "Een helder contactpunt zonder fake submit.",
-      "body": "De pagina toont welke informatie nodig is en houdt de privacycontext zichtbaar voordat leadopslag live gaat."
+      "title": "Een contactformulier dat pas bevestigt na opslag.",
+      "body": "Vul de praktische details in. Park&Wash ziet je aanvraag als nieuwe lead en volgt persoonlijk op."
     },
     "methods": {
       "form": {
         "title": "Contactformulier",
-        "body": "Het formulier krijgt validatie, rate limiting, bot protection en Supabase leadopslag in een volgende slice."
+        "body": "Het formulier valideert je gegevens, vraagt toestemming en bewaart de lead in Supabase."
       },
       "phone": {
         "title": "Telefonische opvolging",
@@ -241,7 +241,57 @@
     },
     "privacy": {
       "title": "Privacy blijft zichtbaar",
-      "body": "De contactflow toont nu al waarvoor gegevens gebruikt worden en linkt naar het privacybeleid."
+      "body": "De contactflow toont waarvoor gegevens gebruikt worden, vraagt expliciete toestemming en linkt naar het privacybeleid."
+    },
+    "form": {
+      "title": "Stuur je aanvraag",
+      "body": "De bevestiging verschijnt alleen wanneer de server je lead heeft bewaard.",
+      "fields": {
+        "name": {
+          "label": "Naam",
+          "placeholder": "Je naam"
+        },
+        "email": {
+          "label": "E-mail",
+          "placeholder": "jij@example.com"
+        },
+        "phone": {
+          "label": "Telefoon",
+          "placeholder": "Optioneel"
+        },
+        "customerType": {
+          "label": "Klanttype",
+          "options": {
+            "particular": "Particulier",
+            "business": "Bedrijf of fleet"
+          }
+        },
+        "companyName": {
+          "label": "Bedrijf",
+          "placeholder": "Optioneel"
+        },
+        "message": {
+          "label": "Bericht",
+          "placeholder": "Vertel kort over voertuig, locatie, gewenste dienst en timing."
+        }
+      },
+      "actions": {
+        "submit": "Bericht verzenden",
+        "pending": "Verzenden..."
+      },
+      "status": {
+        "success": "Bedankt, je bericht is bewaard. Park&Wash volgt je aanvraag persoonlijk op.",
+        "validation": "Controleer de gemarkeerde velden en probeer opnieuw.",
+        "setup": "Het formulier is tijdelijk niet beschikbaar. Probeer later opnieuw of neem rechtstreeks contact op.",
+        "submit": "Je bericht kon niet worden verzonden. Probeer later opnieuw of neem rechtstreeks contact op."
+      },
+      "validation": {
+        "required": "Vul dit veld in.",
+        "tooShort": "Vul iets meer detail in.",
+        "tooLong": "Maak dit veld wat korter.",
+        "email": "Vul een geldig e-mailadres in.",
+        "invalid": "Kies een geldige optie."
+      }
     }
   },
   "BookingPage": {

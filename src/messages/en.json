@@ -205,7 +205,7 @@
   "ContactPage": {
     "eyebrow": "Contact",
     "title": "Contact is the starting point for every request right now.",
-    "body": "This preview groups quote, fleet and planning questions while the real lead form is still being connected server-side.",
+    "body": "This preview groups quote, fleet and planning questions and stores your message only after consent and server confirmation.",
     "entries": {
       "quote": {
         "title": "Quote for one vehicle",
@@ -222,13 +222,13 @@
     },
     "intake": {
       "eyebrow": "Request path",
-      "title": "A clear contact point without fake submit.",
-      "body": "The page shows which information is needed and keeps privacy context visible before lead storage goes live."
+      "title": "A contact form that confirms only after storage.",
+      "body": "Share the practical details. Park&Wash sees your request as a new lead and follows up personally."
     },
     "methods": {
       "form": {
         "title": "Contact form",
-        "body": "The form gets validation, rate limiting, bot protection and Supabase lead storage in a following slice."
+        "body": "The form validates your details, asks for consent and stores the lead in Supabase."
       },
       "phone": {
         "title": "Phone follow-up",
@@ -241,7 +241,57 @@
     },
     "privacy": {
       "title": "Privacy stays visible",
-      "body": "The contact flow already shows why details are used and links to the privacy policy."
+      "body": "The contact flow shows why details are used, asks for explicit consent and links to the privacy policy."
+    },
+    "form": {
+      "title": "Send your request",
+      "body": "The confirmation appears only when the server has stored your lead.",
+      "fields": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "you@example.com"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Optional"
+        },
+        "customerType": {
+          "label": "Customer type",
+          "options": {
+            "particular": "Private customer",
+            "business": "Business or fleet"
+          }
+        },
+        "companyName": {
+          "label": "Company",
+          "placeholder": "Optional"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Describe the vehicle, location, desired service and timing."
+        }
+      },
+      "actions": {
+        "submit": "Send message",
+        "pending": "Sending..."
+      },
+      "status": {
+        "success": "Thanks, your message has been saved. Park&Wash will follow up personally.",
+        "validation": "Check the highlighted fields and try again.",
+        "setup": "The form is temporarily unavailable. Try again later or contact us directly.",
+        "submit": "Your message could not be sent. Try again later or contact us directly."
+      },
+      "validation": {
+        "required": "Fill in this field.",
+        "tooShort": "Add a little more detail.",
+        "tooLong": "Make this field a little shorter.",
+        "email": "Enter a valid email address.",
+        "invalid": "Choose a valid option."
+      }
     }
   },
   "BookingPage": {

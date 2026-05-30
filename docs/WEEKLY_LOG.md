@@ -37,6 +37,9 @@ Highlights:
 - Completed issue #6 public form rate limiting: contact lead submission now
   checks an Upstash-backed server-only limiter before Supabase writes and fails
   closed in production when limiter config is missing.
+- Completed issue #7 admin leads overview: allowlisted admins can review
+  submitted contact leads from `/admin` with loading, empty, and generic error
+  states.
 - Narrowed public `leads` access to anon contact-form inserts and expanded
   pgTAP RLS coverage so public reads and workflow-status writes stay closed.
 - Expanded public smoke/accessibility coverage for key preview routes, mobile
@@ -52,8 +55,7 @@ Highlights:
 Current focus:
 
 - Configure Vercel Bot Protection before public form launch.
-- Add the admin leads overview so submitted contact leads can be managed in the
-  dashboard.
+- Continue with the next admin operations slice after leads can be reviewed.
 
 Risks / watch points:
 

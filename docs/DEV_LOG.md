@@ -14,6 +14,13 @@ Rules:
 
 ## 2026-05-30
 
+- Completed issue #7 admin leads overview: `/admin` now lists submitted contact
+  leads for allowlisted admins with operational follow-up details.
+- Added generic admin leads loading, empty, and error states without exposing
+  raw Supabase error details or lead PII in failures.
+- Added admin lead read-path unit coverage and expanded pgTAP RLS checks so
+  anon and non-admin users cannot read lead details while allowlisted admins
+  can.
 - Completed issue #6 public form rate limiting: contact lead submissions now
   pass the server-only Upstash Redis limiter before Supabase writes.
 - Added hashed route-scoped rate-limit identifiers for IP, email, and phone,

@@ -2,7 +2,7 @@ begin;
 
 create extension if not exists pgtap with schema extensions;
 
-select plan(32);
+select plan(35);
 
 insert into public.services (
   type,
@@ -111,6 +111,12 @@ select is(
   'anon still cannot read leads after public contact insert'
 );
 
+select results_eq(
+  $$select email from public.leads where email = 'visitor@example.com'$$,
+  $$select null::text where false$$,
+  'anon cannot read contact lead details after insert'
+);
+
 reset role;
 
 select is(
@@ -213,6 +219,12 @@ select is(
 );
 
 select results_eq(
+  $$select email, message from public.leads where email = 'visitor@example.com'$$,
+  $$select null::text, null::text where false$$,
+  'authenticated non-admin cannot read lead operational details'
+);
+
+select results_eq(
   $$
     update public.services
     set sort_order = sort_order + 1
@@ -277,6 +289,12 @@ select is(
 select isnt_empty(
   $$select id from public.admin_users where email = 'lahdhirilouay21@gmail.com'$$,
   'admin can read admin allowlist rows'
+);
+
+select results_eq(
+  $$select email, status from public.leads where email = 'visitor@example.com'$$,
+  $$values ('visitor@example.com'::text, 'new'::public.lead_status)$$,
+  'admin can read contact lead operational details'
 );
 
 select lives_ok(

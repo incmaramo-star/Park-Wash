@@ -29,6 +29,10 @@ Highlights:
   now uses Supabase published service records instead of inline pricing data.
 - Completed issue #3 privacy policy and consent path with locale parity for
   footer, contact, booking, and the privacy-policy page.
+- Completed issue #4 public preview pages: home, services, about, portfolio,
+  and contact now form a contact-first public site in `nl`, `fr`, and `en`.
+- Expanded public smoke/accessibility coverage for key preview routes, mobile
+  navigation, footer contact routing, and published service display.
 - Configured repo-specific Matt Pocock skill metadata for GitHub Issues,
   default triage labels, and single-context domain docs.
 - Refreshed the PRD/current plan with the current product state,
@@ -39,8 +43,8 @@ Highlights:
 
 Current focus:
 
-- Polish layout and navigation beyond bootstrap placeholders.
-- Continue the first AFK slices toward the protected contact lead flow.
+- Implement the Upstash-backed public form rate limiter.
+- Continue the first contact-flow slices toward protected contact lead storage.
 
 Risks / watch points:
 
@@ -48,6 +52,8 @@ Risks / watch points:
   wrong repo; use the nested `Park-Wash` app repo.
 - Service area, production infrastructure, and real media are still open launch
   blockers.
+- Portfolio galleries intentionally avoid fake media until approved project
+  images are available.
 - Standalone mockups and the completed bootstrap plan are references, not
   current implementation truth.
 

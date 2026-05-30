@@ -1,16 +1,28 @@
 import { AxeBuilder } from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-test("home page has no critical accessibility violations", async ({ page }) => {
-  await page.goto("/nl");
+const publicPreviewRoutes = [
+  "/nl",
+  "/nl/services",
+  "/nl/about",
+  "/nl/portfolio",
+  "/nl/contact",
+];
 
-  const results = await new AxeBuilder({ page })
-    .disableRules(["color-contrast"])
-    .analyze();
+for (const route of publicPreviewRoutes) {
+  test(`${route} has no critical accessibility violations`, async ({
+    page,
+  }) => {
+    await page.goto(route);
 
-  const critical = results.violations.filter(
-    (violation) => violation.impact === "critical"
-  );
+    const results = await new AxeBuilder({ page })
+      .disableRules(["color-contrast"])
+      .analyze();
 
-  expect(critical).toEqual([]);
-});
+    const critical = results.violations.filter(
+      (violation) => violation.impact === "critical",
+    );
+
+    expect(critical).toEqual([]);
+  });
+}

@@ -12,12 +12,12 @@ type PageIntroProps = {
 
 export function PageIntro({ action, eyebrow, title, body }: PageIntroProps) {
   return (
-    <section className="bg-pw-paper py-20 md:py-28">
+    <section className="bg-pw-paper py-14 md:py-18">
       <div className="shell">
-        <p className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-pw-blue-600">
+        <p className="font-mono text-xs font-semibold uppercase text-pw-blue-600">
           {eyebrow}
         </p>
-        <h1 className="mt-4 max-w-4xl font-display text-4xl font-extrabold leading-tight text-pw-ink md:text-6xl">
+        <h1 className="mt-4 max-w-4xl font-display text-4xl font-extrabold leading-tight text-pw-ink md:text-5xl">
           {title}
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-pw-graphite">

@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" }
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }]
-  }
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 type Props = {
@@ -45,6 +45,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html
       lang={locale}
       className={`${poppins.variable} ${montserrat.variable}`}
+      data-scroll-behavior="smooth"
     >
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>

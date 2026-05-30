@@ -19,68 +19,230 @@
     "copyright": "2026 Park&Wash"
   },
   "HomePage": {
-    "eyebrow": "Mobile detailing",
+    "eyebrow": "Mobile detailing in East Flanders",
     "title": "Showroom ready without losing your time.",
-    "subtitle": "Park&Wash cleans vehicles at home or on location for private customers, SMEs and dealers.",
-    "primaryAction": "View services",
-    "secondaryAction": "Contact us",
-    "servicePreviewLabel": "Starting prices",
-    "services": {
-      "basic": {
-        "title": "Basic detail",
-        "body": "Hand wash, wheels, tyres, windows, mats and detail finish."
+    "subtitle": "Park&Wash comes to your home or location for private customers, SMEs and dealers. You get a clear proposal first, then planning is followed up personally.",
+    "primaryAction": "Request a quote",
+    "secondaryAction": "View services",
+    "servicePreviewLabel": "Published services",
+    "heroSteps": {
+      "handover": {
+        "title": "Hand over the key",
+        "body": "You do not need to move your car."
       },
-      "intense": {
-        "title": "Intense detail",
-        "body": "Complete exterior wash with full interior cleaning."
+      "service": {
+        "title": "Mobile service",
+        "body": "Detailing on location, matched to vehicle and space."
       },
-      "paint": {
-        "title": "Paint corrections",
-        "body": "Correction of paint defects for more gloss and depth."
+      "quote": {
+        "title": "Honest proposal",
+        "body": "Contact first, online booking after real availability."
+      }
+    },
+    "previewPanel": {
+      "label": "Preview status",
+      "eyebrow": "Contact-first preview",
+      "title": "A credible site without a false booking promise.",
+      "body": "Visitors can compare services and get in touch. Direct booking waits until server-confirmed availability is ready."
+    },
+    "servicesIntro": {
+      "title": "Start with the service that fits your vehicle or fleet.",
+      "body": "The previews below come from published Supabase services. Prices stay admin-managed and are not hardcoded in the UI.",
+      "action": "View all services"
+    },
+    "audiences": {
+      "eyebrow": "Who it is for",
+      "title": "A preview for private cars and business vehicles.",
+      "private": {
+        "title": "Private customers",
+        "body": "From careful basic cleaning to intensive detailing for a car that feels fresh again."
       },
-      "coating": {
-        "title": "Coatings",
-        "body": "Paint and finish protection with longer-lasting effect."
-      },
-      "fleet": {
-        "title": "Businesses and fleets",
-        "body": "Fleet care, dealer-ready cleaning and trial vehicle cleaning."
+      "business": {
+        "title": "Businesses and dealers",
+        "body": "Contact-first follow-up for fleet care, dealer-ready vehicles and recurring on-location cleaning."
+      }
+    },
+    "process": {
+      "eyebrow": "Process",
+      "title": "Calm intake, careful work, clear follow-up.",
+      "body": "The preview prepares the real workflow without pretending online reservation is already live.",
+      "steps": {
+        "inspect": {
+          "title": "Understand the vehicle and goal",
+          "body": "The request starts with customer type, vehicle, desired service and practical planning."
+        },
+        "detail": {
+          "title": "Deliver the right service",
+          "body": "Park&Wash focuses on visible results: interior, exterior, paint correction or protection."
+        },
+        "followUp": {
+          "title": "Confirm planning honestly",
+          "body": "Availability and appointment confirmation stay personal until the booking engine is live."
+        }
       }
     },
     "proof": {
       "trust": {
         "title": "Transparent",
-        "body": "Starting prices are clear and will be managed through admin."
+        "body": "Starting prices are visible, but each request is followed up honestly."
       },
       "mobile": {
         "title": "Mobile",
-        "body": "The service comes to the customer based on planning and region."
+        "body": "The service comes to your home or location within the future service area."
       },
       "business": {
         "title": "For businesses",
-        "body": "Fleet and dealer-ready packages remain easy to follow up."
+        "body": "Fleet and dealer-ready requests get their own contact path."
       }
+    },
+    "finalCta": {
+      "eyebrow": "Next step",
+      "title": "Tell us what your vehicle needs; Park&Wash follows up personally.",
+      "body": "This preview sends visitors to contact and quote intent. Online reservation appears only when real slots are safe server-side.",
+      "action": "Contact us"
     }
   },
   "ServicesPage": {
     "eyebrow": "Services",
     "title": "Choose a service and request a quote or callback.",
-    "body": "This preview helps visitors find the right service. Online reservation comes later, once real availability is confirmed server-side."
+    "body": "This preview helps visitors find the right service. Online reservation comes later, once real availability is confirmed server-side.",
+    "action": "Request a quote",
+    "groups": {
+      "particular": {
+        "eyebrow": "Private",
+        "title": "For your own car",
+        "body": "Choose a package as the starting point. Park&Wash adapts the exact approach to condition, goal and timing.",
+        "action": "Quote for my car"
+      },
+      "business": {
+        "eyebrow": "Business",
+        "title": "For companies and fleets",
+        "body": "Use this path for fleet care, dealer-ready vehicles, test cars or recurring on-location maintenance.",
+        "action": "Business request"
+      }
+    },
+    "notes": {
+      "eyebrow": "Guardrails",
+      "title": "Preview content with honest boundaries.",
+      "body": "The service choice feels complete, but the site does not promise direct reservation yet.",
+      "points": {
+        "published": "Every displayed service comes from published Supabase service records.",
+        "quote": "Each CTA leads to contact or quote intent, not to a fake checkout.",
+        "booking": "The booking wizard stays closed until server-side availability and reservation are ready."
+      }
+    }
   },
   "AboutPage": {
     "eyebrow": "About",
     "title": "Mobile detailing from Melle, built on trust and precision.",
-    "body": "This page will tell the story, process and why customers can trust Park&Wash with their key."
+    "body": "Park&Wash is built for customers who want a cared-for vehicle without logistics. The service comes to the customer and works with clear agreements.",
+    "action": "Contact us",
+    "values": {
+      "trust": {
+        "title": "Key-level trust",
+        "body": "Customers hand over the key only when communication is clear and the appointment is right."
+      },
+      "precision": {
+        "title": "Detail focused",
+        "body": "The focus is visible result, clean finishing and an approach that fits the vehicle condition."
+      },
+      "mobile": {
+        "title": "No detour",
+        "body": "The car stays at home, at work or at the dealer while Park&Wash works on location."
+      }
+    },
+    "process": {
+      "eyebrow": "Approach",
+      "title": "From request to cared-for vehicle.",
+      "body": "The preview makes the working method clear so visitors know what to expect.",
+      "steps": {
+        "listen": {
+          "title": "Understand first",
+          "body": "Park&Wash looks at customer type, vehicle, desired result and practical location."
+        },
+        "prepare": {
+          "title": "Plan deliberately",
+          "body": "The right service, duration and preparation are aligned before the appointment is fixed."
+        },
+        "finish": {
+          "title": "Deliver cleanly",
+          "body": "The end result should be immediately visible: clean, cared for and ready to use."
+        }
+      }
+    }
   },
   "PortfolioPage": {
     "eyebrow": "Portfolio",
     "title": "Before and after work will get a strong place here.",
-    "body": "This page will later be filled with real projects, images and result categories."
+    "body": "The structure is ready for real projects without stock images or invented results. Until media is available, the page shows the categories that are coming.",
+    "action": "Discuss a project",
+    "galleries": {
+      "interior": {
+        "status": "Images coming",
+        "title": "Interior cleaning",
+        "body": "Space for seats, mats, dashboard, door panels and detail finishing."
+      },
+      "exterior": {
+        "status": "Images coming",
+        "title": "Exterior and paint",
+        "body": "Space for hand wash, gloss restoration, paint corrections and protective finishing."
+      },
+      "fleet": {
+        "status": "Images coming",
+        "title": "Fleet and dealer-ready",
+        "body": "Space for business cases, multiple vehicles and sale-ready delivery work."
+      }
+    },
+    "proof": {
+      "eyebrow": "Media approach",
+      "title": "Real projects come later, but navigation and categories are ready now.",
+      "body": "This preview avoids fake results and keeps the portfolio ready for approved images.",
+      "cardTitle": "Have a specific vehicle?",
+      "cardBody": "Send the condition, desired service and timing through contact. Park&Wash can propose the right approach.",
+      "action": "Contact us"
+    }
   },
   "ContactPage": {
     "eyebrow": "Contact",
     "title": "Contact is the starting point for every request right now.",
-    "body": "The form will later connect to Supabase and create a lead in the admin dashboard. Until the booking engine is live, follow-up stays manual."
+    "body": "This preview groups quote, fleet and planning questions while the real lead form is still being connected server-side.",
+    "entries": {
+      "quote": {
+        "title": "Quote for one vehicle",
+        "body": "Describe the vehicle, its condition and the desired service so Park&Wash can estimate what is needed."
+      },
+      "fleet": {
+        "title": "Business or fleet request",
+        "body": "Use this path for multiple vehicles, dealers, test cars or recurring cleaning."
+      },
+      "planning": {
+        "title": "Planning and region",
+        "body": "Exact availability is confirmed personally until the booking engine shows real slots."
+      }
+    },
+    "intake": {
+      "eyebrow": "Request path",
+      "title": "A clear contact point without fake submit.",
+      "body": "The page shows which information is needed and keeps privacy context visible before lead storage goes live."
+    },
+    "methods": {
+      "form": {
+        "title": "Contact form",
+        "body": "The form gets validation, rate limiting, bot protection and Supabase lead storage in a following slice."
+      },
+      "phone": {
+        "title": "Phone follow-up",
+        "body": "Personal follow-up stays important for quick planning or business requests."
+      },
+      "email": {
+        "title": "Message with details",
+        "body": "Vehicle type, location, desired service and timing are the basis for a correct quote."
+      }
+    },
+    "privacy": {
+      "title": "Privacy stays visible",
+      "body": "The contact flow already shows why details are used and links to the privacy policy."
+    }
   },
   "BookingPage": {
     "eyebrow": "Preview",

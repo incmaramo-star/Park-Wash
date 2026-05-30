@@ -14,6 +14,16 @@ Rules:
 
 ## 2026-05-30
 
+- Completed issue #4 public preview pages: home, services, about, portfolio,
+  and contact now have coherent contact-first structures in `nl`, `fr`, and
+  `en`.
+- Expanded the services page to use the Supabase published services read path
+  for displayed service previews and prices.
+- Added Playwright smoke coverage for key public preview routes, mobile
+  navigation, footer contact routing, published services, and public
+  accessibility checks.
+- Updated `docs/TODO.md`, `docs/WEEKLY_LOG.md`, and
+  `docs/architecture/README.md` for the completed public preview slice.
 - Completed issue #3 privacy policy and consent path: added localized
   `/privacy-policy` pages for `nl`, `fr`, and `en`.
 - Linked footer privacy access plus contact and booking consent copy to the

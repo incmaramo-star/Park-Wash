@@ -9,8 +9,10 @@ decisions remain in `docs/strategy/DECISIONS.md`.
 The app is a Next.js App Router project with:
 
 - public locale routes for `/nl`, `/fr`, and `/en`
-- placeholder public pages for home, services, about, portfolio, contact, and
-  booking
+- contact-first public preview pages for home, services, about, portfolio, and
+  contact in `nl`, `fr`, and `en`
+- a booking preview page that keeps direct reservation unavailable until
+  server-confirmed availability is implemented
 - localized privacy-policy page with footer and public consent links
 - protected `/admin` shell with Supabase login and email allowlist
 - Tailwind CSS wired to Park&Wash tokens
@@ -67,7 +69,8 @@ src/
   - `src/lib/supabase/server.ts`
 - Public service previews use `src/lib/services/public.ts` to read
   `services` from Supabase with `visibility_status = 'published'`, ordered by
-  `sort_order`, and mapped to the active `nl`, `fr`, or `en` fields.
+  `sort_order`, and mapped to the active `nl`, `fr`, or `en` fields. Home and
+  services public previews both use this read path.
 - Missing env vars throw only when a Supabase client is created, not at import
   time.
 
@@ -155,6 +158,11 @@ Notes:
   through `node ./node_modules/...` instead of NPM `.bin` shims.
 - Playwright Chromium is installed explicitly with
   `node ./node_modules/playwright/cli.js install chromium`.
+- Public smoke coverage checks the contact-first preview routes, mobile
+  navigation, footer contact routing, and published service display across
+  launch locales.
+- Public accessibility smoke coverage runs against home, services, about,
+  portfolio, and contact.
 - `npm run test:db` runs `supabase test db`, including the pgTAP RLS
   verification suite in `supabase/tests/rls_public_admin_access.sql`.
 - `package.json` overrides PostCSS to a patched `8.5.10+` line because the

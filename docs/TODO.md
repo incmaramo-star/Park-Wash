@@ -5,16 +5,10 @@ small and update it after each completed work package.
 
 ## Now
 
-- [ ] Polish layout and navigation beyond bootstrap placeholders.
+- [ ] Implement Vercel Upstash rate-limit helper for public form mutations.
 
 ## Next
 
-- [ ] Build real Home page sections: hero, services preview, trust, CTA.
-- [ ] Build Particulier/Bedrijf choice page.
-- [ ] Build About page with real story and process.
-- [ ] Build Portfolio page structure with placeholder galleries.
-- [ ] Build Contact page UI.
-- [ ] Implement Vercel Upstash rate-limit helper for public form mutations.
 - [ ] Configure Vercel Bot Protection managed ruleset before public form launch.
 - [ ] Implement contact form validation with Zod.
 - [ ] Implement contact lead server mutation.
@@ -62,6 +56,19 @@ small and update it after each completed work package.
 
 ## Done
 
+- [x] Issue #4: public preview pages now provide contact-first home,
+      services, about, portfolio, and contact structures in `nl`, `fr`, and
+      `en`.
+- [x] Public services page uses Supabase published service records where
+      service previews appear.
+- [x] Mobile navigation, footer contact link, key public preview routes, and
+      public accessibility smoke coverage were expanded for issue #4.
+- [x] Polished layout and navigation beyond bootstrap placeholders.
+- [x] Built real Home page sections: hero, services preview, trust, CTA.
+- [x] Built Particulier/Bedrijf choice page.
+- [x] Built About page with story and process.
+- [x] Built Portfolio page structure with placeholder galleries.
+- [x] Built Contact page UI.
 - [x] Issue #1: public preview CTA guardrails route visitors to contact/quote
       intent and keep booking copy honest until server-confirmed reservation is
       implemented.

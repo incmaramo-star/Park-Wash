@@ -19,68 +19,230 @@
     "copyright": "2026 Park&Wash"
   },
   "HomePage": {
-    "eyebrow": "Mobiele detailing",
+    "eyebrow": "Mobiele detailing in Oost-Vlaanderen",
     "title": "Showroom klaar, zonder dat jij tijd verliest.",
-    "subtitle": "Park&Wash reinigt voertuigen aan huis of op locatie voor particulieren, KMO's en autodealers.",
-    "primaryAction": "Bekijk diensten",
-    "secondaryAction": "Neem contact op",
-    "servicePreviewLabel": "Startprijzen",
-    "services": {
-      "basic": {
-        "title": "Basic detail",
-        "body": "Handwas, velgen, banden, ramen, matten en detailafwerking."
+    "subtitle": "Park&Wash komt aan huis of op locatie voor particulieren, KMO's en autodealers. Je krijgt een helder voorstel, daarna volgt de planning persoonlijk op.",
+    "primaryAction": "Vraag een offerte aan",
+    "secondaryAction": "Bekijk diensten",
+    "servicePreviewLabel": "Gepubliceerde diensten",
+    "heroSteps": {
+      "handover": {
+        "title": "Sleutel afgeven",
+        "body": "Je hoeft je wagen niet te verplaatsen."
       },
-      "intense": {
-        "title": "Intense detail",
-        "body": "Complete buitenwas met volledige interieurreiniging."
+      "service": {
+        "title": "Mobiel uitgevoerd",
+        "body": "Detailing op locatie, afgestemd op voertuig en ruimte."
       },
-      "paint": {
-        "title": "Lakcorrecties",
-        "body": "Correctie van lakdefecten voor meer glans en diepte."
+      "quote": {
+        "title": "Eerlijk voorstel",
+        "body": "Contact eerst, online booking pas na echte beschikbaarheid."
+      }
+    },
+    "previewPanel": {
+      "label": "Preview status",
+      "eyebrow": "Contact-first preview",
+      "title": "Een geloofwaardige site zonder valse bookingbelofte.",
+      "body": "Bezoekers kunnen diensten vergelijken en contact opnemen. Rechtstreeks boeken blijft uit tot server-confirmed beschikbaarheid klaar is."
+    },
+    "servicesIntro": {
+      "title": "Start bij de dienst die bij je voertuig of vloot past.",
+      "body": "De previews hieronder komen uit de gepubliceerde services in Supabase. Prijzen blijven admin-beheerbaar en worden niet hardcoded in de UI.",
+      "action": "Alle diensten bekijken"
+    },
+    "audiences": {
+      "eyebrow": "Voor wie",
+      "title": "Een preview voor particuliere wagens en zakelijke voertuigen.",
+      "private": {
+        "title": "Particuliere klanten",
+        "body": "Van een verzorgde basisreiniging tot intens detailwerk voor wie de wagen opnieuw fris wil krijgen."
       },
-      "coating": {
-        "title": "Coatings",
-        "body": "Bescherming voor lak en afwerking met langdurig effect."
-      },
-      "fleet": {
-        "title": "Bedrijven en vloten",
-        "body": "Wagenparkzorg, dealer-ready reiniging en proefbeurten."
+      "business": {
+        "title": "Bedrijven en dealers",
+        "body": "Contact-first opvolging voor fleet care, dealer-ready wagens en terugkerende reiniging op locatie."
+      }
+    },
+    "process": {
+      "eyebrow": "Werkwijze",
+      "title": "Rustige intake, zorgvuldig werk, duidelijke opvolging.",
+      "body": "De preview zet de echte workflow klaar zonder te doen alsof online reserveren al live is.",
+      "steps": {
+        "inspect": {
+          "title": "Voertuig en doel begrijpen",
+          "body": "De aanvraag start met type klant, voertuig, gewenste dienst en praktische planning."
+        },
+        "detail": {
+          "title": "Service op maat uitvoeren",
+          "body": "Park&Wash focust op zichtbaar resultaat: interieur, exterieur, lakcorrectie of bescherming."
+        },
+        "followUp": {
+          "title": "Planning eerlijk bevestigen",
+          "body": "Beschikbaarheid en afspraakbevestiging blijven persoonlijk tot de booking-engine live is."
+        }
       }
     },
     "proof": {
       "trust": {
         "title": "Transparant",
-        "body": "Startprijzen zijn duidelijk en worden later via admin beheerd."
+        "body": "Startprijzen zijn zichtbaar, maar de exacte aanvraag wordt eerlijk opgevolgd."
       },
       "mobile": {
         "title": "Mobiel",
-        "body": "De service komt aan huis of op locatie, afgestemd op planning en regio."
+        "body": "De service komt aan huis of op locatie binnen het toekomstige werkgebied."
       },
       "business": {
         "title": "Voor bedrijven",
-        "body": "Fleet en dealer-ready pakketten blijven apart opvolgbaar."
+        "body": "Fleet en dealer-ready aanvragen krijgen een eigen contactpad."
       }
+    },
+    "finalCta": {
+      "eyebrow": "Volgende stap",
+      "title": "Vertel wat je wagen nodig heeft; Park&Wash volgt je aanvraag persoonlijk op.",
+      "body": "Deze preview stuurt bezoekers naar contact en offerte-intentie. Online reserveren verschijnt pas wanneer echte tijdsloten server-side veilig zijn.",
+      "action": "Contact opnemen"
     }
   },
   "ServicesPage": {
     "eyebrow": "Diensten",
     "title": "Kies je dienst en vraag een offerte of contactmoment aan.",
-    "body": "Deze preview helpt bezoekers de juiste dienst te vinden. Online reserveren komt pas later, zodra echte beschikbaarheid server-side wordt bevestigd."
+    "body": "Deze preview helpt bezoekers de juiste dienst te vinden. Online reserveren komt pas later, zodra echte beschikbaarheid server-side wordt bevestigd.",
+    "action": "Offerte aanvragen",
+    "groups": {
+      "particular": {
+        "eyebrow": "Particulier",
+        "title": "Voor je eigen wagen",
+        "body": "Kies een pakket als startpunt. Park&Wash stemt de exacte aanpak af op staat, doel en timing.",
+        "action": "Offerte voor mijn wagen"
+      },
+      "business": {
+        "eyebrow": "Zakelijk",
+        "title": "Voor bedrijven en vloten",
+        "body": "Gebruik dit pad voor fleet care, dealer-ready wagens, proefritten of terugkerend onderhoud op locatie.",
+        "action": "Zakelijke aanvraag"
+      }
+    },
+    "notes": {
+      "eyebrow": "Guardrails",
+      "title": "Preview-content met eerlijke grenzen.",
+      "body": "De dienstkeuze voelt compleet, maar de site belooft nog geen directe reservatie.",
+      "points": {
+        "published": "Alle getoonde diensten komen uit gepubliceerde Supabase service records.",
+        "quote": "Elke CTA stuurt naar contact of offerte-intentie, niet naar een fake checkout.",
+        "booking": "De booking wizard blijft gesloten tot server-side beschikbaarheid en reservatie klaar zijn."
+      }
+    }
   },
   "AboutPage": {
     "eyebrow": "Over ons",
     "title": "Mobiele reiniging uit Melle, gebouwd op vertrouwen en precisie.",
-    "body": "Hier komt het verhaal, de werkwijze en waarom klanten Park&Wash hun sleutel kunnen toevertrouwen."
+    "body": "Park&Wash is gemaakt voor klanten die hun wagen verzorgd willen zien zonder logistiek gedoe. De service komt naar de klant en werkt met duidelijke afspraken.",
+    "action": "Contact opnemen",
+    "values": {
+      "trust": {
+        "title": "Sleutelvertrouwen",
+        "body": "Klanten geven hun sleutel pas af wanneer de communicatie helder is en de afspraak klopt."
+      },
+      "precision": {
+        "title": "Detailgericht",
+        "body": "De focus ligt op zichtbaar resultaat, nette afwerking en een aanpak die past bij de staat van het voertuig."
+      },
+      "mobile": {
+        "title": "Geen omweg",
+        "body": "De wagen blijft thuis, op kantoor of bij de dealer terwijl Park&Wash het werk op locatie uitvoert."
+      }
+    },
+    "process": {
+      "eyebrow": "Aanpak",
+      "title": "Van aanvraag naar verzorgde wagen.",
+      "body": "De preview maakt de werkwijze duidelijk zodat bezoekers weten wat ze mogen verwachten.",
+      "steps": {
+        "listen": {
+          "title": "Eerst begrijpen",
+          "body": "Park&Wash kijkt naar klanttype, voertuig, gewenst resultaat en praktische locatie."
+        },
+        "prepare": {
+          "title": "Dan gericht plannen",
+          "body": "De juiste dienst, duur en voorbereiding worden afgestemd voordat de afspraak vastligt."
+        },
+        "finish": {
+          "title": "Daarna netjes opleveren",
+          "body": "Het eindresultaat moet meteen zichtbaar zijn: proper, verzorgd en klaar voor gebruik."
+        }
+      }
+    }
   },
   "PortfolioPage": {
     "eyebrow": "Portfolio",
     "title": "Before en after beelden krijgen hier een sterke plek.",
-    "body": "Deze pagina wordt later gevuld met echte projecten, beelden en resultaatcategorieen."
+    "body": "De structuur is klaar voor echte projecten zonder stockbeelden of verzonnen resultaten. Tot de media beschikbaar zijn, toont de pagina welke categorieen eraan komen.",
+    "action": "Project bespreken",
+    "galleries": {
+      "interior": {
+        "status": "Beelden volgen",
+        "title": "Interieurreiniging",
+        "body": "Ruimte voor zetels, matten, dashboard, deurpanelen en detailafwerking."
+      },
+      "exterior": {
+        "status": "Beelden volgen",
+        "title": "Exterieur en lak",
+        "body": "Ruimte voor handwas, glansherstel, lakcorrecties en beschermende afwerking."
+      },
+      "fleet": {
+        "status": "Beelden volgen",
+        "title": "Fleet en dealer-ready",
+        "body": "Ruimte voor zakelijke cases, meerdere voertuigen en verkoopklare afleveringen."
+      }
+    },
+    "proof": {
+      "eyebrow": "Media-aanpak",
+      "title": "Echte projecten komen later, de navigatie en categorieen zijn nu al klaar.",
+      "body": "Deze preview vermijdt fake resultaten en houdt de portfolio klaar voor goedgekeurde beelden.",
+      "cardTitle": "Heb je een concreet voertuig?",
+      "cardBody": "Stuur de staat, gewenste dienst en timing door via contact. Dan kan Park&Wash de juiste aanpak voorstellen.",
+      "action": "Contact opnemen"
+    }
   },
   "ContactPage": {
     "eyebrow": "Contact",
     "title": "Contact is nu het startpunt voor elke aanvraag.",
-    "body": "Het formulier wordt later gekoppeld aan Supabase en maakt dan een lead aan in het admin dashboard. Tot de booking-engine live is, blijft opvolging handmatig."
+    "body": "Deze preview bundelt offerte-, fleet- en planningsvragen terwijl het echte leadformulier nog server-side wordt gekoppeld.",
+    "entries": {
+      "quote": {
+        "title": "Offerte voor een wagen",
+        "body": "Beschrijf voertuig, staat en gewenste dienst zodat Park&Wash gericht kan inschatten wat nodig is."
+      },
+      "fleet": {
+        "title": "Zakelijke of fleetvraag",
+        "body": "Gebruik dit pad voor meerdere voertuigen, dealers, proefwagens of terugkerende reiniging."
+      },
+      "planning": {
+        "title": "Planning en regio",
+        "body": "De exacte beschikbaarheid wordt persoonlijk bevestigd tot de booking-engine echte slots toont."
+      }
+    },
+    "intake": {
+      "eyebrow": "Aanvraagpad",
+      "title": "Een helder contactpunt zonder fake submit.",
+      "body": "De pagina toont welke informatie nodig is en houdt de privacycontext zichtbaar voordat leadopslag live gaat."
+    },
+    "methods": {
+      "form": {
+        "title": "Contactformulier",
+        "body": "Het formulier krijgt validatie, rate limiting, bot protection en Supabase leadopslag in een volgende slice."
+      },
+      "phone": {
+        "title": "Telefonische opvolging",
+        "body": "Voor snelle afstemming blijft persoonlijke opvolging belangrijk, zeker bij planning of zakelijke aanvragen."
+      },
+      "email": {
+        "title": "Bericht met details",
+        "body": "Voertuigtype, locatie, gewenste dienst en timing vormen de basis voor een correcte offerte."
+      }
+    },
+    "privacy": {
+      "title": "Privacy blijft zichtbaar",
+      "body": "De contactflow toont nu al waarvoor gegevens gebruikt worden en linkt naar het privacybeleid."
+    }
   },
   "BookingPage": {
     "eyebrow": "Preview",

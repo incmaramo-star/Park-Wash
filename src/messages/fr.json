@@ -1,0 +1,103 @@
+{
+  "Navigation": {
+    "primaryLabel": "Navigation principale",
+    "home": "Accueil",
+    "services": "Services",
+    "about": "A propos",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "quote": "Demander un devis",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "localeLabel": "Choisir la langue"
+  },
+  "Footer": {
+    "body": "Detailing mobile pour particuliers et entreprises en Flandre orientale.",
+    "contact": "Contact",
+    "area": "Zone: Flandre orientale",
+    "copyright": "2026 Park&Wash"
+  },
+  "HomePage": {
+    "eyebrow": "Detailing mobile",
+    "title": "Une voiture prete showroom, sans perdre votre temps.",
+    "subtitle": "Park&Wash nettoie les vehicules a domicile ou sur site pour particuliers, PME et concessionnaires.",
+    "primaryAction": "Voir les services",
+    "secondaryAction": "Nous contacter",
+    "servicePreviewLabel": "Prix de depart",
+    "services": {
+      "basic": {
+        "title": "Basic detail",
+        "body": "Lavage main, jantes, pneus, vitres, tapis et finition detaillee."
+      },
+      "intense": {
+        "title": "Intense detail",
+        "body": "Lavage exterieur complet avec nettoyage interieur complet."
+      },
+      "paint": {
+        "title": "Corrections peinture",
+        "body": "Correction des defauts pour plus de brillance et de profondeur."
+      },
+      "coating": {
+        "title": "Coatings",
+        "body": "Protection de la peinture et des finitions a effet durable."
+      },
+      "fleet": {
+        "title": "Entreprises et flottes",
+        "body": "Entretien de flotte, preparation dealer-ready et essai."
+      }
+    },
+    "proof": {
+      "trust": {
+        "title": "Transparent",
+        "body": "Les prix de depart sont clairs et seront geres via admin."
+      },
+      "mobile": {
+        "title": "Mobile",
+        "body": "Le service vient a domicile ou sur site selon planning et region."
+      },
+      "business": {
+        "title": "Pour entreprises",
+        "body": "Les offres flotte et dealer-ready restent faciles a suivre."
+      }
+    }
+  },
+  "ServicesPage": {
+    "eyebrow": "Services",
+    "title": "Choisissez un service et demandez un devis ou un contact.",
+    "body": "Cette preview aide les visiteurs a trouver le bon service. La reservation en ligne viendra plus tard, quand la disponibilite reelle sera confirmee cote serveur."
+  },
+  "AboutPage": {
+    "eyebrow": "A propos",
+    "title": "Detailing mobile depuis Melle, base sur confiance et precision.",
+    "body": "Ici viendront l'histoire, la methode et les raisons de confier sa cle a Park&Wash."
+  },
+  "PortfolioPage": {
+    "eyebrow": "Portfolio",
+    "title": "Les avant/apres auront ici une place forte.",
+    "body": "Cette page sera remplie avec de vrais projets, images et categories de resultats."
+  },
+  "ContactPage": {
+    "eyebrow": "Contact",
+    "title": "Le contact est maintenant le point de depart de chaque demande.",
+    "body": "Le formulaire sera plus tard relie a Supabase pour creer un lead dans l'admin. Jusqu'au lancement du moteur de reservation, le suivi reste manuel."
+  },
+  "BookingPage": {
+    "eyebrow": "Preview",
+    "title": "La reservation en ligne n'est pas encore active.",
+    "body": "Park&Wash traite maintenant les demandes via contact ou devis. Le wizard de reservation ne sera mis en ligne que lorsque la disponibilite reelle et la confirmation serveur seront pretes.",
+    "action": "Demander un devis"
+  },
+  "PrivacyConsent": {
+    "privacyLink": "Lire notre politique de confidentialite",
+    "contact": {
+      "label": "J'accepte que Park&Wash utilise mes donnees pour repondre a ma demande.",
+      "notice": "Nous utilisons votre nom, vos coordonnees et votre message uniquement pour traiter votre demande et assurer le suivi si necessaire. Nous ne partageons pas vos donnees avec des tiers a des fins de marketing.",
+      "error": "Confirmez votre consentement pour envoyer votre message."
+    },
+    "booking": {
+      "label": "J'accepte que Park&Wash utilise mes donnees pour repondre a ma demande et suivre un devis ou un contact.",
+      "notice": "Nous utilisons vos donnees uniquement pour traiter votre demande, preparer un devis et vous contacter en cas de question. Une reservation en ligne ne sera confirmee plus tard que via le flux serveur.",
+      "error": "Confirmez votre consentement pour continuer votre demande."
+    }
+  }
+}

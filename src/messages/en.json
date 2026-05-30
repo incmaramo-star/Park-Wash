@@ -1,0 +1,103 @@
+{
+  "Navigation": {
+    "primaryLabel": "Primary navigation",
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "quote": "Request a quote",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "localeLabel": "Choose language"
+  },
+  "Footer": {
+    "body": "Mobile auto detailing for private customers and businesses in East Flanders.",
+    "contact": "Contact",
+    "area": "Service area: East Flanders",
+    "copyright": "2026 Park&Wash"
+  },
+  "HomePage": {
+    "eyebrow": "Mobile detailing",
+    "title": "Showroom ready without losing your time.",
+    "subtitle": "Park&Wash cleans vehicles at home or on location for private customers, SMEs and dealers.",
+    "primaryAction": "View services",
+    "secondaryAction": "Contact us",
+    "servicePreviewLabel": "Starting prices",
+    "services": {
+      "basic": {
+        "title": "Basic detail",
+        "body": "Hand wash, wheels, tyres, windows, mats and detail finish."
+      },
+      "intense": {
+        "title": "Intense detail",
+        "body": "Complete exterior wash with full interior cleaning."
+      },
+      "paint": {
+        "title": "Paint corrections",
+        "body": "Correction of paint defects for more gloss and depth."
+      },
+      "coating": {
+        "title": "Coatings",
+        "body": "Paint and finish protection with longer-lasting effect."
+      },
+      "fleet": {
+        "title": "Businesses and fleets",
+        "body": "Fleet care, dealer-ready cleaning and trial vehicle cleaning."
+      }
+    },
+    "proof": {
+      "trust": {
+        "title": "Transparent",
+        "body": "Starting prices are clear and will be managed through admin."
+      },
+      "mobile": {
+        "title": "Mobile",
+        "body": "The service comes to the customer based on planning and region."
+      },
+      "business": {
+        "title": "For businesses",
+        "body": "Fleet and dealer-ready packages remain easy to follow up."
+      }
+    }
+  },
+  "ServicesPage": {
+    "eyebrow": "Services",
+    "title": "Choose a service and request a quote or callback.",
+    "body": "This preview helps visitors find the right service. Online reservation comes later, once real availability is confirmed server-side."
+  },
+  "AboutPage": {
+    "eyebrow": "About",
+    "title": "Mobile detailing from Melle, built on trust and precision.",
+    "body": "This page will tell the story, process and why customers can trust Park&Wash with their key."
+  },
+  "PortfolioPage": {
+    "eyebrow": "Portfolio",
+    "title": "Before and after work will get a strong place here.",
+    "body": "This page will later be filled with real projects, images and result categories."
+  },
+  "ContactPage": {
+    "eyebrow": "Contact",
+    "title": "Contact is the starting point for every request right now.",
+    "body": "The form will later connect to Supabase and create a lead in the admin dashboard. Until the booking engine is live, follow-up stays manual."
+  },
+  "BookingPage": {
+    "eyebrow": "Preview",
+    "title": "Online booking is not active yet.",
+    "body": "Park&Wash is handling requests through contact or quote intent for now. The booking wizard only goes live once real availability and server-side reservation confirmation are ready.",
+    "action": "Request a quote"
+  },
+  "PrivacyConsent": {
+    "privacyLink": "Read our privacy policy",
+    "contact": {
+      "label": "I agree that Park&Wash may use my details to respond to my question.",
+      "notice": "We use your name, contact details and message only to handle your request and follow up if needed. We do not share your details with third parties for marketing.",
+      "error": "Confirm your consent to send your message."
+    },
+    "booking": {
+      "label": "I agree that Park&Wash may use my details to respond to my request and follow up on a quote or callback.",
+      "notice": "We use your details only to handle your request, prepare a quote and contact you with questions. Online reservations will only be confirmed later through the server-side booking flow.",
+      "error": "Confirm your consent to continue your request."
+    }
+  }
+}

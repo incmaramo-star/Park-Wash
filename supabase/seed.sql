@@ -1,0 +1,110 @@
+insert into public.services (
+  type,
+  name_nl,
+  name_fr,
+  name_en,
+  description_nl,
+  description_fr,
+  description_en,
+  price_min,
+  price_max,
+  price_type,
+  duration_minutes,
+  buffer_before_minutes,
+  buffer_after_minutes,
+  visibility_status,
+  sort_order
+) values
+  (
+    'particular',
+    'Basic detail',
+    'Basic detail',
+    'Basic detail',
+    'Handwas, velgen, banden, ramen, matten en detailafwerking.',
+    'Lavage main, jantes, pneus, vitres, tapis et finition detaillee.',
+    'Hand wash, wheels, tyres, windows, mats and detail finish.',
+    135,
+    null,
+    'from',
+    120,
+    15,
+    15,
+    'published',
+    10
+  ),
+  (
+    'particular',
+    'Intense detail',
+    'Intense detail',
+    'Intense detail',
+    'Complete buitenwas met volledige interieurreiniging.',
+    'Lavage exterieur complet avec nettoyage interieur complet.',
+    'Complete exterior wash with full interior cleaning.',
+    185,
+    null,
+    'from',
+    180,
+    15,
+    30,
+    'published',
+    20
+  ),
+  (
+    'particular',
+    'Lakcorrecties',
+    'Corrections peinture',
+    'Paint corrections',
+    'Correctie van lakdefecten voor meer glans en diepte.',
+    'Correction des defauts pour plus de brillance et de profondeur.',
+    'Correction of paint defects for more gloss and depth.',
+    250,
+    650,
+    'range',
+    240,
+    30,
+    30,
+    'published',
+    30
+  ),
+  (
+    'particular',
+    'Coatings',
+    'Coatings',
+    'Coatings',
+    'Bescherming voor lak en afwerking met langdurig effect.',
+    'Protection de la peinture et des finitions a effet durable.',
+    'Paint and finish protection with longer-lasting effect.',
+    500,
+    1200,
+    'range',
+    300,
+    30,
+    30,
+    'published',
+    40
+  ),
+  (
+    'business',
+    'Bedrijven en vloten',
+    'Entreprises et flottes',
+    'Businesses and fleets',
+    'Wagenparkzorg, dealer-ready reiniging en proefbeurten.',
+    'Entretien de flotte, preparation dealer-ready et essai.',
+    'Fleet care, dealer-ready cleaning and trial vehicle cleaning.',
+    null,
+    null,
+    'on_request',
+    240,
+    30,
+    30,
+    'published',
+    50
+  );
+
+-- Production admin allowlist starts owner-only. Add developer admins only after
+-- an explicit access decision.
+insert into public.admin_users (email, role, is_active)
+values ('lahdhirilouay21@gmail.com', 'owner', true)
+on conflict (email) do update
+set role = excluded.role,
+    is_active = excluded.is_active;

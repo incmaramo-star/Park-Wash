@@ -283,7 +283,8 @@
         "success": "Thanks, your message has been saved. Park&Wash will follow up personally.",
         "validation": "Check the highlighted fields and try again.",
         "setup": "The form is temporarily unavailable. Try again later or contact us directly.",
-        "submit": "Your message could not be sent. Try again later or contact us directly."
+        "submit": "Your message could not be sent. Try again later or contact us directly.",
+        "rateLimit": "Too many requests for now. Try again later or contact us directly."
       },
       "validation": {
         "required": "Fill in this field.",

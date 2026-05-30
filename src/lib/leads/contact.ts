@@ -18,7 +18,11 @@ export type ContactLeadFieldErrorCode =
   | "email"
   | "consent"
   | "invalid";
-export type ContactLeadFormErrorCode = "validation" | "setup" | "submit";
+export type ContactLeadFormErrorCode =
+  | "validation"
+  | "setup"
+  | "submit"
+  | "rateLimit";
 
 export type ContactLeadActionState = {
   status: "idle" | "success" | "error";

@@ -12,8 +12,8 @@ The app is a Next.js App Router project with:
 - contact-first public preview pages for home, services, about, portfolio, and
   contact in `nl`, `fr`, and `en`
 - contact lead submission through a Server Action with Zod validation,
-  explicit consent, generic failure handling, and server-confirmed Supabase
-  insert feedback
+  explicit consent, Upstash-backed rate limiting, generic failure handling, and
+  server-confirmed Supabase insert feedback
 - a booking preview page that keeps direct reservation unavailable until
   server-confirmed availability is implemented
 - localized privacy-policy page with footer and public consent links
@@ -41,6 +41,7 @@ src/
   lib/
     leads/             # contact lead validation and action state helpers
     pricing/           # price formatting helpers
+    rate-limit/        # server-only public form rate limiter and testable core
     services/          # public/admin service read helpers
     supabase/          # lazy Supabase client factories
   messages/            # nl/fr/en messages
@@ -78,8 +79,8 @@ src/
   services public previews both use this read path.
 - The localized contact form submits through
   `src/app/[locale]/contact/actions.ts`, validates via
-  `src/lib/leads/contact.ts`, and inserts a `leads` row only after validation
-  and consent pass.
+  `src/lib/leads/contact.ts`, checks the public form rate limiter, and inserts
+  a `leads` row only after validation, consent, and rate limiting pass.
 - Public lead writes are opened narrowly by
   `supabase/migrations/20260530130428_contact_lead_public_insert.sql`: anon can
   insert `contact_form` leads with `status = 'new'` and recent
@@ -116,20 +117,19 @@ prices shown in public previews come from admin-managed Supabase records.
 
 ## Public Form Rate Limiting
 
-- Production rate limiting for public contact and booking form mutations will
-  use Upstash Redis provisioned through the Vercel Marketplace.
-- The future implementation should use `@upstash/redis` and
-  `@upstash/ratelimit` with sliding-window limits in a shared server-only
-  helper.
-- Rate-limit identifiers should combine route scope with hashed IP and, where
-  available, hashed normalized email/phone values. Do not store raw IP
-  addresses, emails, or phone numbers in Redis keys.
-- Public mutations should return a generic retry-later error when limited and
-  should fail closed in production if rate-limit configuration is missing.
-- Local development may use an explicit permissive fallback until the Vercel
-  Upstash resource is provisioned.
-- Issue #5 deliberately leaves this helper as the next slice; the current
-  contact action returns generic failures but does not rate-limit yet.
+- Public contact form mutations use Upstash Redis provisioned through the
+  Vercel Marketplace via `@upstash/redis` and `@upstash/ratelimit`.
+- `src/lib/rate-limit/public-forms.ts` is server-only and applies a sliding
+  window of 5 submissions per 10 minutes for each generated identifier.
+- Rate-limit identifiers combine route scope with hashed IP and, where
+  available, hashed normalized email/phone values. Raw IP addresses, emails,
+  and phone numbers are not stored in Redis keys.
+- Public mutations return a generic retry-later error when limited and fail
+  closed in production if rate-limit configuration is missing.
+- Local development has an explicit permissive fallback when Upstash env vars
+  are absent. Set `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`
+  locally to exercise the real Upstash path.
+- The helper is reusable for later public booking form mutations.
 
 ## Bot Protection
 
@@ -177,7 +177,8 @@ Notes:
   navigation, footer contact routing, and published service display across
   launch locales.
 - Contact smoke coverage checks that the form entry point renders across
-  launch locales; unit coverage checks validation/consent parsing.
+  launch locales; unit coverage checks validation/consent parsing and public
+  form rate-limit allowed, limited, and missing-production-config behavior.
 - Public accessibility smoke coverage runs against home, services, about,
   portfolio, and contact.
 - `npm run test:db` runs `supabase test db`, including the pgTAP RLS
@@ -195,5 +196,4 @@ place.
 
 Remaining auth/security work:
 
-- implementation of the decided Upstash-backed public form rate limiter
 - Vercel Bot Protection managed ruleset configuration before form launch

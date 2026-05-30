@@ -96,6 +96,9 @@ pricing and schema decisions, update `docs/strategy/DECISIONS.md`.
   Supabase Auth, allowlisted admin users, and RLS.
 - Public forms need validation, rate limiting, bot protection, consent, and
   privacy copy before launch.
+- Production public form submissions require
+  `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN`; missing production
+  rate-limit configuration must fail closed before Supabase writes.
 - Dutch, French, and English routes must remain functionally equivalent for
   launch-critical public flows.
 - Dummy data is allowed in development and staging only, not in live booking.

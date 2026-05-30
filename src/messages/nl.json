@@ -283,7 +283,8 @@
         "success": "Bedankt, je bericht is bewaard. Park&Wash volgt je aanvraag persoonlijk op.",
         "validation": "Controleer de gemarkeerde velden en probeer opnieuw.",
         "setup": "Het formulier is tijdelijk niet beschikbaar. Probeer later opnieuw of neem rechtstreeks contact op.",
-        "submit": "Je bericht kon niet worden verzonden. Probeer later opnieuw of neem rechtstreeks contact op."
+        "submit": "Je bericht kon niet worden verzonden. Probeer later opnieuw of neem rechtstreeks contact op.",
+        "rateLimit": "Er zijn tijdelijk te veel aanvragen. Probeer later opnieuw of neem rechtstreeks contact op."
       },
       "validation": {
         "required": "Vul dit veld in.",

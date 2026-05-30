@@ -81,6 +81,7 @@ export default async function ContactPage({ params }: Props) {
       validation: t("form.status.validation"),
       setup: t("form.status.setup"),
       submit: t("form.status.submit"),
+      rateLimit: t("form.status.rateLimit"),
     },
     validation: {
       required: t("form.validation.required"),

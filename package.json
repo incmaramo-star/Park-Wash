@@ -23,6 +23,8 @@
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.105.4",
     "@tailwindcss/postcss": "^4.3.0",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.38.0",
     "autoprefixer": "^10.5.0",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.38.0",
@@ -32,6 +34,7 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-hook-form": "^7.76.0",
+    "server-only": "^0.0.1",
     "tailwindcss": "^4.3.0",
     "zod": "^4.4.3"
   },

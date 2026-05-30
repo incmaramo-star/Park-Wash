@@ -7,6 +7,36 @@ decision, reason, impact, owner, review date.
 
 ---
 
+## 2026-05-30 - Rate-limit public contact submissions with Upstash Redis
+
+- **Status:** Decided
+- **Owner:** Project owner
+- **Decision:** Public contact lead submissions are checked through a
+  server-only Upstash Redis sliding-window rate limiter before inserting a
+  lead. Production requires `UPSTASH_REDIS_REST_URL` and
+  `UPSTASH_REDIS_REST_TOKEN`; local development may run without them through
+  the documented permissive fallback.
+- **Reason:** The contact-first preview can accept public traffic only if form
+  abuse is stopped before it reaches Supabase, while local contributors should
+  still be able to run the app before the Vercel Marketplace Upstash resource
+  is provisioned.
+- **Impact:**
+  - Contact submissions return a generic retry-later message when rate limited
+    or when production rate-limit configuration is missing.
+  - Redis keys include route scope plus hashed IP, email, and phone identifiers
+    only; raw IP addresses, emails, and phone numbers are not stored in keys.
+  - The helper is ready to reuse for later public booking form mutations.
+- **Sources of truth:**
+  - Rate-limit helper - `src/lib/rate-limit/public-forms.ts`
+  - Testable core - `src/lib/rate-limit/public-forms-core.ts`
+  - Contact mutation - `src/app/[locale]/contact/actions.ts`
+  - Environment example - `.env.local.example`
+  - Unit tests - `tests/unit/public-form-rate-limit.test.ts`
+- **Review date:** Re-evaluate when booking form mutations go live or real
+  traffic shows the contact form limit needs tuning.
+
+---
+
 ## 2026-05-30 - Keep public lead access insert-only and contact-scoped
 
 - **Status:** Decided

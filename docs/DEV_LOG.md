@@ -12,6 +12,31 @@ Rules:
 - Do not store secrets, credentials, private customer data, or raw `.env.local`
   values here.
 
+## 2026-05-31
+
+- Ran issue #9 contact-first preview launch gate after confirming GitHub issues
+  #1-#8 are closed.
+- Reinstalled dependencies with `npm install --ignore-scripts` because normal
+  `npm install` hit the known Windows `&` path postinstall issue.
+- Verified local quality gates: `npm run lint`, `npm run typecheck`,
+  `npm run test`, `npm run test:db`, `npm run build`, `npm run test:e2e`, and
+  `npm run test:a11y` all passed.
+- Verified the localized public/contact/admin smoke path: Playwright passed for
+  `nl`, `fr`, and `en`, mobile navigation routed to contact, anonymous
+  `/admin` redirected to login, and accessibility smoke passed.
+- Verified a real local `/nl/contact` submission at a mobile viewport: the
+  server action validated consent, passed the local rate-limit fallback, wrote
+  a Supabase `leads` row, showed success only after storage, and the test lead
+  was deleted afterward.
+- Recorded the production launch decision as no-go: the documented Vercel URL
+  returned 404, Vercel CLI credentials/link were unavailable in this worktree,
+  no Park&Wash Supabase production project was identifiable through the
+  connected account, local Upstash env vars were missing, and Bot Protection is
+  still documented in `Log` rather than launch `Challenge` mode.
+- Updated `docs/operations/RUNBOOK.md`, `docs/TODO.md`,
+  `docs/WEEKLY_LOG.md`, `README.md`, and `AGENTS.md` with the issue #9 gate
+  evidence and remaining blockers.
+
 ## 2026-05-30
 
 - Completed live Vercel setup for issue #8: confirmed production project

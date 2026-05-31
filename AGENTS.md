@@ -26,10 +26,18 @@ flows, pricing, or brand implementation.
 
 ## Current Phase
 
-The repository currently contains planning and brand foundation. It does not
-yet contain a bootstrapped Next.js application.
+The repository contains the bootstrapped Next.js contact-first preview:
+localized public pages, privacy/consent copy, contact lead submission,
+rate limiting, admin lead visibility, and Vercel Bot Protection setup notes are
+implemented.
 
-Before app bootstrap, preserve the existing brand assets and docs:
+Online booking is not live yet. The contact-first preview launch gate was run
+on 2026-05-31: local code, database, build, smoke, mobile, and accessibility
+checks passed, but production launch remains blocked until the production
+deployment, Supabase project/env vars, Upstash env vars, and Bot Protection
+`Challenge` mode are confirmed.
+
+Preserve the existing brand assets and docs:
 
 - `src/styles/tokens.css`
 - `public/brand/logo/`
@@ -44,8 +52,8 @@ reference material.
 
 ## Commands
 
-These commands become active after the Next.js bootstrap is implemented.
-Until then, do not invent commands that are not present in `package.json`.
+These commands are active. Do not invent commands that are not present in
+`package.json`.
 
 | Purpose | Command |
 |---|---|
@@ -232,11 +240,12 @@ For planning/doc-only changes:
 
 ## Temporary Open Items
 
-- Bootstrap the Next.js app structure from `docs/plan-bootstrap-mobile-first.md`.
-- Create Supabase migrations and dev seed data.
-- Fill in exact service area / allowed postal codes.
-- Fill in admin allowlist emails.
+- Deploy the contact-first preview to the production Vercel URL and smoke it.
+- Confirm the production Supabase project and required env vars.
+- Provision or confirm production Upstash Redis env vars for public forms.
 - Switch Vercel Bot Protection from `Log` to `Challenge` before public contact
   form launch.
+- Fill in exact service area / allowed postal codes.
+- Fill in admin allowlist emails.
 - Confirm domain name.
 - Provide or choose launch-quality hero/portfolio media.

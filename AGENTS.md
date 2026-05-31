@@ -236,6 +236,7 @@ For planning/doc-only changes:
 - Create Supabase migrations and dev seed data.
 - Fill in exact service area / allowed postal codes.
 - Fill in admin allowlist emails.
-- Choose bot protection provider.
+- Switch Vercel Bot Protection from `Log` to `Challenge` before public contact
+  form launch.
 - Confirm domain name.
 - Provide or choose launch-quality hero/portfolio media.

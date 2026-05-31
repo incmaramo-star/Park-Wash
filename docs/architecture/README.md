@@ -145,9 +145,13 @@ prices shown in public previews come from admin-managed Supabase records.
 
 - Launch bot protection will use Vercel Bot Protection from the Vercel Firewall
   managed rulesets.
-- Configure the managed ruleset in the Vercel project before public contact or
-  booking forms go live. Start with logging/traffic observation where possible,
-  then switch suspicious traffic to challenge mode before launch.
+- The confirmed production Vercel project is
+  `incmaramo-stars-projects/park_wash`, serving `https://parkwash.vercel.app`.
+- Vercel Firewall is enabled and Bot Protection is enabled in initial `Log`
+  mode for traffic observation. The setup runbook is
+  `docs/operations/RUNBOOK.md`.
+- Switch Bot Protection to `Challenge` before public contact form submission
+  launches in production.
 - Do not add Cloudflare Turnstile, hCaptcha, or reCAPTCHA by default in the
   first form implementation.
 - Cloudflare Turnstile is the preferred fallback if Vercel Bot Protection plus
@@ -210,4 +214,5 @@ place.
 
 Remaining auth/security work:
 
-- Vercel Bot Protection managed ruleset configuration before form launch
+- Switch Vercel Bot Protection from `Log` to `Challenge` before public contact
+  form launch

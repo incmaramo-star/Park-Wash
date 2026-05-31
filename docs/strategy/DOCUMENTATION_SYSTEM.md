@@ -22,6 +22,7 @@ instead of scattering the same rule across many files.
 | `docs/plan-bootstrap-mobile-first.md` | Temporary execution plan for Fase 1, step 1. Remove or archive after bootstrap is done. |
 | `docs/strategy/DECISIONS.md` | Durable decision log for choices that should not be reopened casually. |
 | `docs/strategy/DOCUMENTATION_SYSTEM.md` | This file. Explains how the documentation system works. |
+| `docs/operations/RUNBOOK.md` | Operational setup, verification, and incident steps that live outside app code. |
 | `docs/design/README.md` | Explains the read-only design handoff and canonical brand asset locations. |
 | `src/styles/tokens.css` | Canonical brand/design token file. |
 | `supabase/migrations/` | Future source of truth for database schema. |
@@ -34,6 +35,7 @@ instead of scattering the same rule across many files.
 | Architecture decision | `docs/strategy/DECISIONS.md`; later also an ADR under `docs/architecture/adr/` |
 | Bootstrap or next-step implementation detail | `docs/plan-bootstrap-mobile-first.md` while bootstrap is active |
 | Commands, quality gates, or contributor rules | `AGENTS.md` and `README.md` when useful |
+| Operational setup or verification step | `docs/operations/RUNBOOK.md` |
 | Brand token change | `src/styles/tokens.css` and `docs/strategy/DECISIONS.md` if material |
 | Logo or brand asset change | `public/brand/logo/`, `docs/design/README.md`, and `docs/strategy/DECISIONS.md` if material |
 | Schema change | `supabase/migrations/`, `docs/PLAN.md` while pre-bootstrap, and decision log if strategic |

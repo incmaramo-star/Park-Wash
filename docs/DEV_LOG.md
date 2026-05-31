@@ -14,6 +14,21 @@ Rules:
 
 ## 2026-05-30
 
+- Completed live Vercel setup for issue #8: confirmed production project
+  `incmaramo-stars-projects/park_wash`, linked the local checkout, and added
+  `.vercel/` to `.gitignore`.
+- Set the Vercel project framework preset to `Next.js` with default build,
+  install, dev, and output settings.
+- Enabled Vercel Firewall and Bot Protection for `park_wash` in initial `Log`
+  mode. Bot Protection must move to `Challenge` before public contact form
+  submission launches in production.
+- Added `docs/operations/RUNBOOK.md` for issue #8 Vercel Bot Protection setup,
+  including production project confirmation, Log-first observation, Challenge
+  before public contact launch, verification evidence, and no default CAPTCHA
+  fallback.
+- Updated `docs/TODO.md`, `docs/WEEKLY_LOG.md`,
+  `docs/architecture/README.md`, and `docs/strategy/DOCUMENTATION_SYSTEM.md`
+  with the issue #8 setup result.
 - Completed issue #7 admin leads overview: `/admin` now lists submitted contact
   leads for allowlisted admins with operational follow-up details.
 - Added generic admin leads loading, empty, and error states without exposing

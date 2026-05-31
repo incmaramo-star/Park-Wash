@@ -5,7 +5,7 @@ small and update it after each completed work package.
 
 ## Now
 
-- [ ] Configure Vercel Bot Protection managed ruleset before public form launch.
+- [ ] Build admin services/pricing CRUD.
 
 ## Next
 
@@ -47,11 +47,23 @@ small and update it after each completed work package.
 - [ ] Run Lighthouse performance/accessibility checks.
 - [ ] Confirm domain name.
 - [ ] Confirm production Supabase project and env vars.
-- [ ] Confirm Vercel project setup.
+- [ ] Switch Vercel Bot Protection from `Log` to `Challenge` before public
+      contact form launch.
 - [ ] Run full launch gate.
 
 ## Done
 
+- [x] Issue #8: Confirmed production Vercel project
+      `incmaramo-stars-projects/park_wash` with production URL
+      `https://parkwash.vercel.app`.
+- [x] Issue #8: Linked the local checkout to Vercel, ignored `.vercel/`, and
+      set the project framework preset to `Next.js` with default build/install
+      settings.
+- [x] Issue #8: Enabled Vercel Firewall and Bot Protection in initial `Log`
+      mode for traffic observation.
+- [x] Issue #8: Added the Vercel Bot Protection operations runbook with
+      project-confirmation prerequisites, initial mode policy, verification
+      checklist, and no-CAPTCHA fallback position.
 - [x] Issue #7: `/admin` now shows submitted contact leads to allowlisted
       admins, including empty, loading, and generic error states.
 - [x] Issue #7: admin lead visibility is covered by explicit read-path unit

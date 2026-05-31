@@ -40,6 +40,9 @@ Highlights:
 - Completed issue #7 admin leads overview: allowlisted admins can review
   submitted contact leads from `/admin` with loading, empty, and generic error
   states.
+- Completed issue #8 Vercel Bot Protection setup: confirmed the production
+  Vercel project, linked the checkout, set the project preset to Next.js, and
+  enabled Bot Protection in initial `Log` mode.
 - Narrowed public `leads` access to anon contact-form inserts and expanded
   pgTAP RLS coverage so public reads and workflow-status writes stay closed.
 - Expanded public smoke/accessibility coverage for key preview routes, mobile
@@ -54,8 +57,9 @@ Highlights:
 
 Current focus:
 
-- Configure Vercel Bot Protection before public form launch.
 - Continue with the next admin operations slice after leads can be reviewed.
+- Switch Vercel Bot Protection from `Log` to `Challenge` before public contact
+  form submission launches in production.
 
 Risks / watch points:
 
@@ -66,7 +70,9 @@ Risks / watch points:
 - Portfolio galleries intentionally avoid fake media until approved project
   images are available.
 - Contact lead storage is now rate-limited in code, but production launch still
-  needs Upstash env vars provisioned and Vercel Bot Protection configured.
+  needs Supabase and Upstash env vars provisioned in Vercel.
+- Bot Protection is currently in observation-only `Log` mode; switch it to
+  `Challenge` before public contact form submission launches in production.
 - Standalone mockups and the completed bootstrap plan are references, not
   current implementation truth.
 

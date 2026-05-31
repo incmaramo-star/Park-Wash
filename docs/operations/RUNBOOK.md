@@ -4,6 +4,80 @@ This runbook stores operational setup and verification steps that live outside
 application code. Do not store secrets, tokens, customer data, or raw
 environment values here.
 
+## Contact-First Preview Launch Gate
+
+Issue: [#9 Contact-first preview launch gate](https://github.com/incmaramo-star/Park-Wash/issues/9)
+
+Status: ran on 2026-05-31. Local implementation gates passed, but production
+launch is no-go until the open production readiness items below are resolved.
+
+### Launch Decision
+
+Do not launch the public contact-first preview in production yet.
+
+The local app is ready for review, but the production surface is not confirmed:
+the documented production URL returned 404, Vercel CLI credentials/link were
+not available in this worktree, no identifiable Park&Wash Supabase production
+project was visible through the connected account, production Upstash env vars
+were not confirmed, and Bot Protection is still documented in `Log` mode rather
+than launch `Challenge` mode.
+
+### Gate Checklist
+
+- [x] GitHub issues #1-#8 are closed.
+- [x] `npm run lint` passed.
+- [x] `npm run typecheck` passed.
+- [x] `npm run test` passed: 5 files, 16 tests.
+- [x] `npm run test:db` passed: 1 pgTAP file, 35 tests.
+- [x] `npm run build` passed.
+- [x] `npm run test:e2e` passed: 19 passed, 1 skipped opt-in admin login test.
+- [x] `npm run test:a11y` passed: 5 pages.
+- [x] Public pages and contact flow smoke passed for `nl`, `fr`, and `en`.
+- [x] Mobile navigation smoke passed and routed to `/nl/contact`.
+- [x] Contact form write smoke passed locally at a 390x844 mobile viewport: the
+      server action accepted only a valid consented submission, wrote a
+      Supabase `leads` row, showed success after storage, and the test row was
+      deleted afterward.
+- [x] Contact validation, consent, rate-limit, and missing production config
+      behavior are covered by unit tests.
+- [x] Lead insert/read privacy is covered by pgTAP RLS tests, including anon
+      insert-only access, public/non-admin read denial, and allowlisted admin
+      read access.
+- [x] Anonymous `/admin` redirects to `/admin/login` in Playwright.
+- [x] Privacy policy links and contact/booking consent copy are verified in
+      `nl`, `fr`, and `en`.
+- [x] Preview and booking copy do not claim completed online booking before
+      server-confirmed booking exists.
+- [ ] Production Vercel deployment is confirmed and serving the preview.
+- [ ] Production Supabase project and env vars are confirmed.
+- [ ] Production Upstash Redis env vars are provisioned in Vercel.
+- [ ] Vercel Bot Protection is switched from `Log` to `Challenge` and
+      published before public contact form launch.
+- [ ] Firewall/Bot Protection events are visible after a controlled production
+      smoke request.
+
+### Evidence
+
+```text
+Gate run date: 2026-05-31
+Branch: codex/issue-9-contact-first-preview-launch-gate
+GitHub dependencies: issues #1-#8 closed
+Dependency install note: normal npm install failed in the Windows path with
+  `&`; npm install --ignore-scripts completed with 0 vulnerabilities.
+Local env presence: Supabase URL, anon key, and service-role key were present
+  in .env.local; Upstash env vars were missing locally.
+Local Supabase: local stack reachable; pgTAP RLS tests passed.
+Contact submit smoke: passed against local `/nl/contact`; test lead deleted.
+Production URL smoke: https://parkwash.vercel.app and `/nl/contact` returned
+  404.
+Vercel CLI: no local credentials and no `.vercel/project.json` in this
+  worktree, so project/env/firewall state could not be re-confirmed.
+Supabase connector: visible projects were not identifiable as Park&Wash
+  production.
+Launch decision: no-go for public production launch until the unchecked items
+  above are complete.
+```
+
 ## Vercel Bot Protection
 
 Issue: [#8 Vercel Bot Protection setup](https://github.com/incmaramo-star/Park-Wash/issues/8)

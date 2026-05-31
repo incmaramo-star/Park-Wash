@@ -43,6 +43,12 @@ Highlights:
 - Completed issue #8 Vercel Bot Protection setup: confirmed the production
   Vercel project, linked the checkout, set the project preset to Next.js, and
   enabled Bot Protection in initial `Log` mode.
+- Ran issue #9 contact-first preview launch gate: local lint, typecheck, unit,
+  pgTAP RLS, build, E2E, mobile, contact-submit, and accessibility checks
+  passed.
+- Marked the contact-first preview as production no-go until deployment,
+  production Supabase, Upstash env vars, and Bot Protection `Challenge` mode
+  are confirmed.
 - Narrowed public `leads` access to anon contact-form inserts and expanded
   pgTAP RLS coverage so public reads and workflow-status writes stay closed.
 - Expanded public smoke/accessibility coverage for key preview routes, mobile
@@ -57,9 +63,11 @@ Highlights:
 
 Current focus:
 
-- Continue with the next admin operations slice after leads can be reviewed.
-- Switch Vercel Bot Protection from `Log` to `Challenge` before public contact
-  form submission launches in production.
+- Resolve contact-first preview production launch blockers before a human
+  launch decision: deploy/smoke Vercel production, confirm production Supabase,
+  provision Upstash env vars, and switch Bot Protection to `Challenge`.
+- Continue with the next admin operations slice after the contact-first
+  production blockers are closed.
 
 Risks / watch points:
 
@@ -73,6 +81,12 @@ Risks / watch points:
   needs Supabase and Upstash env vars provisioned in Vercel.
 - Bot Protection is currently in observation-only `Log` mode; switch it to
   `Challenge` before public contact form submission launches in production.
+- The documented production URL `https://parkwash.vercel.app` returned 404
+  during the issue #9 gate on 2026-05-31.
+- This worktree had no Vercel CLI credentials/link during the issue #9 gate, so
+  production Vercel env vars and Firewall state could not be re-confirmed.
+- The connected Supabase account did not show an identifiable Park&Wash
+  production project during the issue #9 gate.
 - Standalone mockups and the completed bootstrap plan are references, not
   current implementation truth.
 

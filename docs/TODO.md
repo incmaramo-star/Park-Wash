@@ -5,7 +5,9 @@ small and update it after each completed work package.
 
 ## Now
 
-- [ ] Build admin services/pricing CRUD.
+- [ ] Resolve contact-first preview production blockers: deploy the Vercel app,
+      confirm production Supabase, provision Upstash env vars, and switch Bot
+      Protection to `Challenge`.
 
 ## Next
 
@@ -46,13 +48,22 @@ small and update it after each completed work package.
 - [ ] Run mobile visual QA.
 - [ ] Run Lighthouse performance/accessibility checks.
 - [ ] Confirm domain name.
-- [ ] Confirm production Supabase project and env vars.
+- [ ] Confirm production Supabase project and env vars for contact lead writes.
+- [ ] Provision or confirm production Upstash Redis env vars in Vercel.
+- [ ] Deploy the contact-first preview to the production Vercel URL and smoke
+      `/nl/contact`.
 - [ ] Switch Vercel Bot Protection from `Log` to `Challenge` before public
       contact form launch.
-- [ ] Run full launch gate.
+- [ ] Re-run full launch gate after production blockers are resolved.
 
 ## Done
 
+- [x] Issue #9: Ran the contact-first preview launch gate on 2026-05-31.
+      Local lint, typecheck, unit tests, pgTAP RLS tests, build, Playwright
+      smoke, mobile, contact-submit, and accessibility checks passed.
+- [x] Issue #9: Documented the launch decision as production no-go until the
+      Vercel deployment/domain, production Supabase, production Upstash env
+      vars, and Bot Protection `Challenge` mode are confirmed.
 - [x] Issue #8: Confirmed production Vercel project
       `incmaramo-stars-projects/park_wash` with production URL
       `https://parkwash.vercel.app`.
